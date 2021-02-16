@@ -1,0 +1,16 @@
+<nav x-data="{ navOpen: false }" class="p-4 bg-gray-50 shadow-md z-10">
+    <a href="{{site.baseURL}}/" class="pr-4">
+        <img class="inline-block h-12" src="https://b7s9-static.nyc3.digitaloceanspaces.com/srp/website/heartscape-logo-color.png" alt="HeartScape team logo"/>
+    </a>
+    {# desktop nav  #}
+    <div class="hidden md:inline-block space-x-4">
+        {% include './nav-items.njk'%}
+    </div>
+
+    <button class="inline-block md:hidden text-2xl mt-1 float-right text-gray-700 active:text-gray-400" @click="navOpen = true">
+        <i class="ci-hamburger"></i>
+    </button>
+    <div x-show.transition.95ms="navOpen" @click.away="navOpen = false" class="content-between mt-2 space-y-2">
+        {% include './nav-items.njk'%}
+    </div>
+</nav >

@@ -11,6 +11,12 @@ module.exports = function (eleventyConfig) {
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
   });
 
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/tinygesture/TinyGesture.js": "./js/TinyGesture.js"
+  })
+
+  eleventyConfig.addPassthroughCopy({ "./js/swipe-handler.js": "./js/swipe-handler.js" })
+
   eleventyConfig.addShortcode("version", function () {
     return String(Date.now());
   });
@@ -31,4 +37,11 @@ module.exports = function (eleventyConfig) {
 
     return content;
   });
+
+  return {
+    dir: {
+      input: '.',
+      output: '_site',
+    },
+  }
 };

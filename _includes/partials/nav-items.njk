@@ -1,0 +1,18 @@
+{% if navigation.items %}
+    {% for item in navigation.items %}
+        {% set externalAttribute = '' %}
+        {% set currentAttribute = '' %}
+
+        {% if item.external %}
+            {% set externalAttribute = ' rel="external"' %}
+        {% endif %}
+
+        {% if page.url == item.url %}
+            {% set currentAttribute = ' aria-current="page"' %}
+        {% endif %}
+
+        <a class="block md:inline-block px-4 py-2 rounded bg-gray-100 hover:bg-gray-300" href="{{ site.baseURL }}{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
+            {{ item.text }}
+        </a>
+    {% endfor %}
+{% endif %}
