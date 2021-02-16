@@ -15,6 +15,10 @@ module.exports = function (eleventyConfig) {
     "./node_modules/tinygesture/TinyGesture.js": "./js/TinyGesture.js"
   })
 
+  eleventyConfig.addPassthroughCopy({
+    "assets/": "assets/"
+  })
+
   eleventyConfig.addPassthroughCopy({ "./js/swipe-handler.js": "./js/swipe-handler.js" })
 
   eleventyConfig.addShortcode("version", function () {
