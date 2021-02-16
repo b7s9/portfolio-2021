@@ -1,0 +1,28 @@
+{% if navigation.social %}
+
+    {% for item in navigation.social %}
+        {% set externalAttribute = '' %}
+        {% set currentAttribute = '' %}
+        {% set emailId = '' %}
+
+        {% if item.external %}
+            {% set externalAttribute = ' rel="external" target="blank"' %}
+        {% endif %}
+
+        {% if page.url == item.url %}
+            {% set currentAttribute = ' aria-current="page"' %}
+        {% endif %}
+
+        {# {% if item.email %}
+            {% set emailId = 'id="email"' %}
+        {% endif %} #}
+        {# {% if item.email %}
+                <input hidden="hidden" type="text" value="{{item.url}}" id="email-url">
+            {% endif %} #}
+
+        <a class="block md:inline-block py-2 rounded text-gray-600" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
+            <i class="text-md mr-2 {{item.icon}}"></i>
+            <span>{{ item.text }}</span>
+        </a>
+    {% endfor %}
+{% endif %}

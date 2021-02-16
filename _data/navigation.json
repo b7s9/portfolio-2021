@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "text": "Projects",
+      "url": "/projects",
+      "external": false
+    },
+    {
+      "text": "About",
+      "url": "/about",
+      "external": false
+    }
+  ],
+  "social": [
+    {
+      "text": "Github",
+      "url": "https://github.com/b7s9",
+      "icon": "fab fa-github",
+      "external": true
+    },
+    {
+      "text": "Linkedin",
+      "url": "https://www.linkedin.com/in/ben-schenerman/",
+      "icon": "fab fa-linkedin",
+      "external": true
+    },
+    {
+      "text": "Email",
+      "url": "mailto:interactive@b7s9.com",
+      "icon": "fas fa-envelope",
+      "external": true,
+      "email": true
+    }
+  ]
+}
