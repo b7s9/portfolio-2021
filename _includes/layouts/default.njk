@@ -7,7 +7,12 @@
         <meta charset="UTF-8"/>
         <link href="https://b7s9-static.nyc3.digitaloceanspaces.com/srp/website/heartscape-logo-color.png" rel="shortcut icon" type="image/png">
         <meta name="description" content="{{site.description}}"/>
+
+        <meta name="og:type" content="website"/>
+        <meta name="og:title" content="{{site.title}}"/>
         <meta name="og:description" content="{{site.description}}"/>
+        <meta name="og:image" content="https://b7s9-static.nyc3.digitaloceanspaces.com/srp/website/heartscape-logo-color.png"/>
+
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
 
@@ -18,7 +23,6 @@
 
         {% block head %}{% endblock %}
         <script src="{{site.baseURL}}/js/alpine.js?v={% version %}"></script>
-        <script type="module" src="{{site.baseURL}}/js/swipe-handler.js?v={% version %}"></script>
         {# <script src="{{site.baseURL}}/js/TinyGesture.js?v={% version %}"></script> #}
     </head>
     <body>
@@ -26,5 +30,6 @@
         {% block content %}
             {{ content | safe }}
         {% endblock %}
+        <script type="module" src="{{site.baseURL}}/js/swipe-handler.js?v={% version %}"></script>
     </body>
 </html>
