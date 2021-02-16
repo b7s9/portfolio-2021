@@ -3,13 +3,11 @@
 {% block title %}It does work{% endblock %}
 
 {% block content %}
-    <div id="gesture-target" class="fixed inset-0 flex justify-center items-center">
-        <div>
-            <i class="fab fa-github"></i>
-
-            <span class="text-change">Good design</span><br/>
-            <span class="change">is<br/>as little design<br/>as possible</span><br/>
-            <span x-data="{message:'🤖 Hello World 🤓'}" x-text="message"></span>
+    <main>
+        <div class="inline-block">
+            {% include 'partials/nav-social.njk'%}
         </div>
-    </div>
+        <a href="{{ site.baseurl }}projects/">Design & Audio</a>
+        <a href="{{ site.baseurl }}about/">Ben Schenerman (b7s9)</a>
+    </main>
 {% endblock %}
