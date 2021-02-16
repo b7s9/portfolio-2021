@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: {
     content: ["_site/**/*.html"],
@@ -6,11 +8,19 @@ module.exports = {
     },
   },
   theme: {
-    extend: {
-      colors: {
-        change: "black",
-      },
-    },
+    extend: {},
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.coolGray,
+      green: colors.green,
+      primary: {
+        light: '#20791C',
+        dark: '#093D0A'
+      }
+    }
   },
   variants: {},
   plugins: [],
