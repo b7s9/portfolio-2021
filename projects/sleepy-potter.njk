@@ -49,6 +49,20 @@ images: [affirmation, player, player-desktop]
         <p>The concern now lies in whether to continue to scale up my usage of localStorage or move to a centralized database. The benefit of moving to a central db is to offer cross-device data syncing. However, this comes at the (literal) cost of creating and maintaining a database, adding account/login functionality, session/token authentication, and moving this project to its own server droplet, to protect my other portfolio projects. All of which would be great, but require a bit more resources than I want to give at the moment. Therefore I’m staying on track with the original build system, for the time being.</p>
 
         <p>I’m now in the midst of responding to usability feedback in new Figma designs, and building in new pages and features.</p>
+
+        <h2>Feedback</h2>
+        <blockquote>
+            <p>do you have any feedback about the harry potter audio book website thing i could toss into my writeup of the project?</p>
+            <figcaption>&mdash; Ben</figcaption>
+        </blockquote>
+        <blockquote>
+            <p>Yes sure! I don’t know what the “seek” button means, and I wish there were a sleep timer shorter than the episode length ❤️ but otherwise the controls are great!</p>
+            <p>And I love the bedtime thought</p>
+            <figcaption>&mdash; Ellie</figcaption>
+        </blockquote>
+
+        <p>From this feedback I removed the “seek” control, which was meant to allow quick scrubbing through the file but was broken on ios, along with the volume slider. Gone are the days when Webkit used to be the premiere browser engine, lol.</p>
+        <p>I also added in a sleep timer which pauses the audio after the timer out.</p>
     </div>
 
 {% endblock %}
