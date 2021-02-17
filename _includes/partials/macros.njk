@@ -1,0 +1,7 @@
+{% macro projectGallery(directory, fileList) %}
+    {% for image in fileList %}
+        <a @click="$dispatch('img-modal', {  imgModalSrc: '{{directory}}/{{image}}.png', imgModalDesc: '{{image}}' })" class="cursor-pointer">
+            <img src="  {{directory}}/{{image}}.png" alt="{{image}}">
+        </a>
+    {% endfor %}
+{% endmacro %}

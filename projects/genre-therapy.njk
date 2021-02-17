@@ -1,10 +1,12 @@
 ---
 tags: project
 title: Genre Therapy
+slug: genre-therapy
 status: Released, Season 1 ongoing
 client: WKDU, My Curiosity
 tools: [Logic Pro X, Ableton Live 10]
 tech: [Wordpress, PHP, CSS, RSS]
+images: [main, mobile, spotify, logic-pro]
 ---
 {% extends "layouts/project.njk" %}
 
@@ -50,10 +52,5 @@ tech: [Wordpress, PHP, CSS, RSS]
         <p>I considered a few different 3rd party podcast distributors, but none of them offered the customization or media hosting that I was looking for at a reasonable price point. The exception was Anchor, which is quite comprehensive and completely free, but I refuse to use it on principle of the service being owned and operated by Spotify. Eventually I resolved to do the whole process manually.</p>
 
         <p>Since I had already setup an object storage subscription for the Harry Potter Audiobook Player app, it didn’t cost me any more to use that to host audio for this podcast. It’s not as annoying as I thought it would be to maintain, but there's a huge margin for error if I don't triple check my XML before updating the feed. Another difference is I don’t get download stats for episodes. Based on my experience releasing music and anxiously watching stats, that’s probably for the best.</p>
-    </div>
-    <div id="gallery-content" hidden="hidden">
-        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
     </div>
 {% endblock %}
