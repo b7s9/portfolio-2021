@@ -1,0 +1,15 @@
+{% extends "layouts/default.njk" %}
+
+{% block title %}b7s9 | Ben Schenerman{% endblock %}
+
+{% block content %}
+    <main>
+        <ul>
+            {%- for project in collections.project -%}
+                <li>
+                    <a href="{{project.url}}">{{ project.data.title }}</a>
+                </li>
+            {%- endfor -%}
+        </ul>
+    </main>
+{% endblock %}
