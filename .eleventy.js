@@ -16,9 +16,8 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addPassthroughCopy({ "assets/": "assets/" })
+  eleventyConfig.addPassthroughCopy({ "js/": "js/" })
   eleventyConfig.addPassthroughCopy({ "favicon.ico/": "favicon.ico/" })
-
-  eleventyConfig.addPassthroughCopy({ "./js/swipe-handler.js": "./js/swipe-handler.js" })
 
   eleventyConfig.addShortcode("version", function () {
     return String(Date.now());
