@@ -1,59 +1,32 @@
-# eleventy-tailwindcss-alpinejs-starter by [Greg Wolanski](https://gregwolanski.com)
+# b7s9 Portfolio (2021)
 
-A starter repository showing how to build a website with the [Eleventy](https://www.11ty.dev), [Tailwind CSS](https://tailwindcss.com), and [Alpine.js](https://github.com/alpinejs/alpine).
+This portfolio is a SSG built on Javascript. It features dark mode and swipe interactions.
 
-Learn more on CSS-Tricks: [An Eleventy Starter with Tailwind CSS and Alpine.js](https://css-tricks.com/eleventy-starter-with-tailwind-css-alpine-js/)
+## Docs
 
-## Getting Started
+[Eleventy](https://www.11ty.dev), [Tailwind CSS](https://tailwindcss.com), [Alpine.js](https://github.com/alpinejs/alpine).
 
-### 1. Clone this repository
+## Instructions
 
-```
-git clone https://github.com/gregwolanski/eleventy-tailwindcss-alpinejs-starter.git my-website-name
-```
+### Local Dev
 
-### 2. Navigate to the directory
-
-```
-cd my-website-name
-```
-
-### 3. Install the dependencies
+The `start` command watches for changes on save
 
 ```
 npm install
+npm start
 ```
 
-### 4. Update the dependencies
+### Production build
 
-```
-npm update
-```
-
-### 5. Build the project to generate the first CSS
-
-This step is only required the very first time.
+This changes the baseURL to remote, and optimizes a few things. The resulting `_site/` directory can be copied onto remote.
 
 ```
 npm run build
 ```
 
-### 6. Run Eleventy
+## Credits
 
-```
-npm run start
-```
+Template and [article](https://css-tricks.com/eleventy-starter-with-tailwind-css-alpine-js/) by [Greg Wolanski](https://gregwolanski.com)
 
-## Author
-
-[Greg Wolanski](https://gregwolanski.com)
-
-## Troubleshooting
-
-[Windows](https://github.com/gregwolanski/eleventy-tailwindcss-alpinejs-starter/issues/3)
-
-## License
-
-MIT
-
-See `LICENSE` for more information.
+MIT License
