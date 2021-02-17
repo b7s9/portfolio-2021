@@ -1,0 +1,39 @@
+{% extends "layouts/default.njk" %}
+
+{{title}}
+
+{% block content %}
+    <main>
+        <header>
+            <h1 class="text-4xl title-gradient">{{title}}</h1>
+            <p>
+                <strong>Client:</strong>
+                {{client}}
+            </p>
+            <p>
+                <strong>Project Status:</strong>
+                {{status}}
+            </p>
+            <p>
+                <strong>Tools:</strong>
+
+                {% for tool in tools %}
+                    <span>{{tool}}</span>,
+                {% endfor %}
+            </p>
+            <p>
+                <strong>Tech:</strong>
+
+                {% for techie in tech %}
+                    <span>{{techie}}</span>,
+                {% endfor %}
+            </p>
+
+        </header>
+
+        {% block projectContent %}
+            {{ projectContent | safe }}
+        {% endblock %}
+
+    </main>
+{% endblock %}

@@ -6,84 +6,54 @@ client: WKDU, My Curiosity
 tools: [Logic Pro X, Ableton Live 10]
 tech: [Wordpress, PHP, CSS, RSS]
 ---
-{% extends "layouts/default.njk" %}
+{% extends "layouts/project.njk" %}
 
 {% block title %}{{title}}
 {% endblock %}
 
-{% block content %}
-    <main>
-        <div id="text-content">
-            <header>
-                <h1 class="text-4xl title-gradient">{{title}}</h1>
-                <p>
-                    <strong>Client:</strong>
-                    {{client}}
-                </p>
-                <p>
-                    <strong>Project Status:</strong>
-                    {{status}}
-                </p>
-                <p>
-                    <strong>Tools:</strong>
+{% block projectContent %}
+    <div id="text-content">
+        <h2>Problem</h2>
+        <p>Song Exploder hardly ever releases new episodes, and he mostly features top 40 musicians now.</p>
 
-                    {% for tool in tools %}
-                        <span>{{tool}}</span>,
-                    {% endfor %}
-                </p>
-                <p>
-                    <strong>Tech:</strong>
+        <h2>Solution</h2>
+        <ol>
+            <li>Radio show on WKDU to tell the story of how an artist wrote and produced a song, and their growth as an artist over time</li>
+            <li>Website</li>
+            <li>Distributed podcast for asynchronous listening</li>
+        </ol>
 
-                    {% for techie in tech %}
-                        <span>{{techie}}</span>,
-                    {% endfor %}
-                </p>
+        <h2>Editing and Production</h2>
+        <p>Fans of Song Exploder will immediately recognize the influence for this show, and most likely enjoy the new direction. I’ve taken that format as a guide, and made some improvements in Genre Therapy
+        </p>
 
-            </header>
-            <article>
-                <h2>Problem</h2>
-                <p>Song Exploder hardly ever releases new episodes, and he mostly features top 40 musicians now.</p>
+        <p>I’ll try to summarize, though. There were a few complaints about missing functionality, like an “undo finish task” button or a screen to view all previous accomplishments. Most feedback was about mismatching expectations.
+        </p>
 
-                <h2>Solution</h2>
-                <ol>
-                    <li>Radio show on WKDU to tell the story of how an artist wrote and produced a song, and their growth as an artist over time</li>
-                    <li>Website</li>
-                    <li>Distributed podcast for asynchronous listening</li>
-                </ol>
+        <ol>
+            <li>Genre Therapy guests are either relatively unknown, or sort of looking into the Pop world from nearby.</li>
+            <li>Rather than just focusing on influences, songwriting, and production, Genre Therapy brings out more of an artist’s emotional relationships in the context of music, and considers their growth over time. I’ve brought in some of my own experiences with EFT to the interview process, which was the main inspiration behind the podcast title.</li>
+            <li>The editing style leans further into hyper-realism, such that the sounds you hear in Genre Therapy are not just explicitly created by the artists, but also contain sound design and compositional elements from me.</li>
 
-                <h2>Editing and Production</h2>
-                <p>Fans of Song Exploder will immediately recognize the influence for this show, and most likely enjoy the new direction. I’ve taken that format as a guide, and made some improvements in Genre Therapy
-                </p>
+        </ol>
 
-                <p>I’ll try to summarize, though. There were a few complaints about missing functionality, like an “undo finish task” button or a screen to view all previous accomplishments. Most feedback was about mismatching expectations.
-                </p>
+        <h2>Marketing</h2>
+        <p>Since my friend was commissioning me to write a piece of music for one of her projects, I returned the favor by commissioing her to design the cover art, based on some mockups I provided. I took several screenshots within podcast apps to provide reference as to the different dimensions it would be rendered on Apple, Overcast, and Spotify. From there we determined minimum, maximum, and average viewing dimensions to be 90px, 630px, and 180px respectively. Since these are fairly small sizes, we opted for simple shapes, large typography, and eye-catching colors.</p>
 
-                <ol>
-                    <li>Genre Therapy guests are either relatively unknown, or sort of looking into the Pop world from nearby.</li>
-                    <li>Rather than just focusing on influences, songwriting, and production, Genre Therapy brings out more of an artist’s emotional relationships in the context of music, and considers their growth over time. I’ve brought in some of my own experiences with EFT to the interview process, which was the main inspiration behind the podcast title.</li>
-                    <li>The editing style leans further into hyper-realism, such that the sounds you hear in Genre Therapy are not just explicitly created by the artists, but also contain sound design and compositional elements from me.</li>
+        <h2>Web Development</h2>
+        <p>Purchased domain and setup SSL with certbot command line interface. Wordpress droplet from DigitalOcean</p>
+        <p>Made a child theme of Wordpress Twenty-Twenty-One, but it doesn't respect the php
+            <code>wp_enque_stylesheet()</code>
+            function (you'd think Automattic would know better?) so I had to work around the theme by placing scripts and stylesheets inline in layout files rather than isolated template partials. It's janky, but it works. When I have time to come back to this I'll probably just make a new theme from scratch and save myself the headache.</p>
 
-                </ol>
+        <h2>Podcast Distribution</h2>
+        <p>I considered a few different 3rd party podcast distributors, but none of them offered the customization or media hosting that I was looking for at a reasonable price point. The exception was Anchor, which is quite comprehensive and completely free, but I refuse to use it on principle of the service being owned and operated by Spotify. Eventually I resolved to do the whole process manually.</p>
 
-                <h2>Marketing</h2>
-                <p>Since my friend was commissioning me to write a piece of music for one of her projects, I returned the favor by commissioing her to design the cover art, based on some mockups I provided. I took several screenshots within podcast apps to provide reference as to the different dimensions it would be rendered on Apple, Overcast, and Spotify. From there we determined minimum, maximum, and average viewing dimensions to be 90px, 630px, and 180px respectively. Since these are fairly small sizes, we opted for simple shapes, large typography, and eye-catching colors.</p>
-
-                <h2>Web Development</h2>
-                <p>Purchased domain and setup SSL with certbot command line interface. Wordpress droplet from DigitalOcean</p>
-                <p>Made a child theme of Wordpress Twenty-Twenty-One, but it doesn't respect the php
-                    <code>wp_enque_stylesheet()</code>
-                    function (you'd think Automattic would know better?) so I had to work around the theme by placing scripts and stylesheets inline in layout files rather than isolated template partials. It's janky, but it works. When I have time to come back to this I'll probably just make a new theme from scratch and save myself the headache.</p>
-
-                <h2>Podcast Distribution</h2>
-                <p>I considered a few different 3rd party podcast distributors, but none of them offered the customization or media hosting that I was looking for at a reasonable price point. The exception was Anchor, which is quite comprehensive and completely free, but I refuse to use it on principle of the service being owned and operated by Spotify. Eventually I resolved to do the whole process manually.</p>
-
-                <p>Since I had already setup an object storage subscription for the Harry Potter Audiobook Player app, it didn’t cost me any more to use that to host audio for this podcast. It’s not as annoying as I thought it would be to maintain, but there's a huge margin for error if I don't triple check my XML before updating the feed. Another difference is I don’t get download stats for episodes. Based on my experience releasing music and anxiously watching stats, that’s probably for the best.</p>
-            </article>
-        </div>
-        <div id="gallery-content" hidden="hidden">
-            <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-            <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-            <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-        </div>
-    </main>
+        <p>Since I had already setup an object storage subscription for the Harry Potter Audiobook Player app, it didn’t cost me any more to use that to host audio for this podcast. It’s not as annoying as I thought it would be to maintain, but there's a huge margin for error if I don't triple check my XML before updating the feed. Another difference is I don’t get download stats for episodes. Based on my experience releasing music and anxiously watching stats, that’s probably for the best.</p>
+    </div>
+    <div id="gallery-content" hidden="hidden">
+        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
+        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
+        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
+    </div>
 {% endblock %}

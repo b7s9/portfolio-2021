@@ -6,82 +6,53 @@ client: My Friend Ellie, My Curiosity
 tools: [Sketch]
 tech: [React, TailwindCSS, Bash]
 ---
-{% extends "layouts/default.njk" %}
+{% extends "layouts/project.njk" %}
 
 {% block title %}{{title}}
 {% endblock %}
 
-{% block content %}
-    <main>
-        <div id="text-content">
-            <header>
-                <h1 class="text-4xl title-gradient">{{title}}</h1>
-                <p>
-                    <strong>Client:</strong>
-                    {{client}}
-                </p>
-                <p>
-                    <strong>Project Status:</strong>
-                    {{status}}
-                </p>
-                <p>
-                    <strong>Design Tools:</strong>
+{% block projectContent %}
+    <div id="text-content">
 
-                    {% for tool in tools %}
-                        <span>{{tool}}</span>,
-                    {% endfor %}
-                </p>
-                <p>
-                    <strong>Technology:</strong>
+        <h2>Problem</h2>
+        <p>Todo lists are a helpful way of organizing the tasks that you need and/or want to do, but for people with ADHD/ADD, it can often be very difficult to actually find the motivation to check an item off that list. When the list gets too long, it can feel especially overwhelming.</p>
 
-                    {% for techie in tech %}
-                        <span>{{techie}}</span>,
-                    {% endfor %}
-                </p>
+        <h2>Solution</h2>
+        <p>One of the most effective means of self-motivation I've discovered is regular self-affirmations. By lifting your spirits, it's much easier to move that energy and apply it to something totally unrelated—like Newton's law of emotion.</p>
 
-            </header>
-            <article>
-                <h2>Problem</h2>
-                <p>Todo lists are a helpful way of organizing the tasks that you need and/or want to do, but for people with ADHD/ADD, it can often be very difficult to actually find the motivation to check an item off that list. When the list gets too long, it can feel especially overwhelming.</p>
+        <p>This project is a Progressive Web App that requires you to say something nice about yourself every time you want to add a new item to your todo list. Rather than view all of your todos at once in a daunting list, the todo viewer picks a random one to show you, but also picks a random affirmation to display right beneath it. This way the user experience is more focused and kinder than a standard to do list.</p>
 
-                <h2>Solution</h2>
-                <p>One of the most effective means of self-motivation I've discovered is regular self-affirmations. By lifting your spirits, it's much easier to move that energy and apply it to something totally unrelated—like Newton's law of emotion.</p>
+        <h2>Usability Feedback</h2>
+        <p>I completed a working alpha and conducted a remote usability study with the intent of redefining the scope of the project. A full explanation of methods, results, and discussion, is available in [this blog post](https://blog.b7s9.com/home/ottd-alpha-feedback). There was a lot of interesting feedback so I’d recommend checking it out if you’re curious about this project.</p>
 
-                <p>This project is a Progressive Web App that requires you to say something nice about yourself every time you want to add a new item to your todo list. Rather than view all of your todos at once in a daunting list, the todo viewer picks a random one to show you, but also picks a random affirmation to display right beneath it. This way the user experience is more focused and kinder than a standard to do list.</p>
+        <p>I’ll try to summarize, though. There were a few complaints about missing functionality, like an “undo finish task” button or a screen to view all previous accomplishments. Most feedback was about mismatching expectations.
+        </p>
 
-                <h2>Usability Feedback</h2>
-                <p>I completed a working alpha and conducted a remote usability study with the intent of redefining the scope of the project. A full explanation of methods, results, and discussion, is available in [this blog post](https://blog.b7s9.com/home/ottd-alpha-feedback). There was a lot of interesting feedback so I’d recommend checking it out if you’re curious about this project.</p>
+        <ol>
+            <li>
+                <strong>Functional:</strong>
+                Respondents noted a lack of undo buttons, small button height and handwriting font size, requested cross-device data sync, and a screen to view all accomplishments thus far.
+            </li>
+            <li>
+                <strong>Cognitive:</strong>
+                Respondents pointed out confusing language in the link titles—especially on the Add form, confusing empty/default state messages to the point of actual frustration, and a difficulty with coming up with self-affirmations.
+            </li>
+        </ol>
 
-                <p>I’ll try to summarize, though. There were a few complaints about missing functionality, like an “undo finish task” button or a screen to view all previous accomplishments. Most feedback was about mismatching expectations.
-                </p>
+        <p>The most helpful feedback in narrowing the scope of this project was from users who struggled to write self-affirmations and users who wanted more fine-grained control over the data. These are essentially the two opposing extremes of competency levels when dealing with emotions around task management. Secure users want stronger controls/models and insecure users are avoiding interaction altogether. I determined from this that the primary demographic for this project is insecurity, and my goals are to address their needs and concerns to keep them engaged in positive mental health. The first solution I’ve been working on to address avoidance/stress when writing self-affirmations, is to provide prompts from the system. I’m also reviewing existing psychology literature for other methods of increasing self-efficacy.</p>
 
-                <ol>
-                    <li>
-                        <strong>Functional:</strong>
-                        Respondents noted a lack of undo buttons, small button height and handwriting font size, requested cross-device data sync, and a screen to view all accomplishments thus far.
-                    </li>
-                    <li>
-                        <strong>Cognitive:</strong>
-                        Respondents pointed out confusing language in the link titles—especially on the Add form, confusing empty/default state messages to the point of actual frustration, and a difficulty with coming up with self-affirmations.
-                    </li>
-                </ol>
+        <h2>Closing Thoughts</h2>
+        <p>I’ve been going back and forth for a while on which direction to take this project. I setup versions with the same functionality in both React and Vue, with the intent of making design systems, new components, and localStorage easier to implement, but I had issues with both frameworks in trying to customize my usage of localStorage and the serviceWorker API. The Workbox plugin for Webpack is eternally frustrating as I can’t seem to wrap my head around the docs, or how Create React App deals with Webpack plugins, and I’ve yet to find a friend who understands either Webpack or Workbox well enough to help me with the project. I have found some promise in using CRACO on other projects, but since I’m already working on another React project, I’ve resolved to use this project to keep my vanilla JS skills sharp.</p>
 
-                <p>The most helpful feedback in narrowing the scope of this project was from users who struggled to write self-affirmations and users who wanted more fine-grained control over the data. These are essentially the two opposing extremes of competency levels when dealing with emotions around task management. Secure users want stronger controls/models and insecure users are avoiding interaction altogether. I determined from this that the primary demographic for this project is insecurity, and my goals are to address their needs and concerns to keep them engaged in positive mental health. The first solution I’ve been working on to address avoidance/stress when writing self-affirmations, is to provide prompts from the system. I’m also reviewing existing psychology literature for other methods of increasing self-efficacy.</p>
+        <p>The concern now lies in whether to continue to scale up my usage of localStorage or move to a centralized database. The benefit of moving to a central db is to offer cross-device data syncing. However, this comes at the (literal) cost of creating and maintaining a database, adding account/login functionality, session/token authentication, and moving this project to its own server droplet, to protect my other portfolio projects. All of which would be great, but require a bit more resources than I want to give at the moment. Therefore I’m staying on track with the original build system, for the time being.</p>
 
-                <h2>Closing Thoughts</h2>
-                <p>I’ve been going back and forth for a while on which direction to take this project. I setup versions with the same functionality in both React and Vue, with the intent of making design systems, new components, and localStorage easier to implement, but I had issues with both frameworks in trying to customize my usage of localStorage and the serviceWorker API. The Workbox plugin for Webpack is eternally frustrating as I can’t seem to wrap my head around the docs, or how Create React App deals with Webpack plugins, and I’ve yet to find a friend who understands either Webpack or Workbox well enough to help me with the project. I have found some promise in using CRACO on other projects, but since I’m already working on another React project, I’ve resolved to use this project to keep my vanilla JS skills sharp.</p>
+        <p>I’m now in the midst of responding to usability feedback in new Figma designs, and building in new pages and features.</p>
+    </div>
 
-                <p>The concern now lies in whether to continue to scale up my usage of localStorage or move to a centralized database. The benefit of moving to a central db is to offer cross-device data syncing. However, this comes at the (literal) cost of creating and maintaining a database, adding account/login functionality, session/token authentication, and moving this project to its own server droplet, to protect my other portfolio projects. All of which would be great, but require a bit more resources than I want to give at the moment. Therefore I’m staying on track with the original build system, for the time being.</p>
+    <div id="gallery-content" hidden="hidden">
+        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
+        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
+        <img src="https://placekitten.com/375/221" alt="Placeholder Image">
+    </div>
 
-                <p>I’m now in the midst of responding to usability feedback in new Figma designs, and building in new pages and features.</p>
-            </article>
-        </div>
-
-        <div id="gallery-content" hidden="hidden">
-            <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-            <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-            <img src="https://placekitten.com/375/221" alt="Placeholder Image">
-        </div>
-
-    </main>
 {% endblock %}
