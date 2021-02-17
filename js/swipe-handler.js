@@ -1,21 +1,27 @@
 import TinyGesture from './TinyGesture.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const target = document.getElementById('gesture-target');
-  if (target) {
+  const textContent = document.getElementById('text-content');
+  const galleryContent = document.getElementById('gallery-content');
+  if (textContent) {
 
-    const gesture = new TinyGesture(target);
+    const gesture = new TinyGesture(textContent);
 
     gesture.on('swipeleft', event => {
-      // The gesture was a left swipe.
+      textContent.hidden = true;
+      galleryContent.hidden = false;
 
-      // This will always be true for a left swipe.
-      gesture.swipedHorizontal;
-      // This will be true if diagonalSwipes is on and the gesture was diagonal
-      // enough to also be a vertical swipe.
-      gesture.swipedVertical;
+      console.log('swiped Left')
+    });
+  }
+  if (galleryContent) {
+    const gesture = new TinyGesture(galleryContent);
 
-      console.log('swiped')
+    gesture.on('swiperight', event => {
+      textContent.hidden = false;
+      galleryContent.hidden = true;
+
+      console.log('swiped Right')
     });
   }
 
