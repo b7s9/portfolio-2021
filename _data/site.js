@@ -6,7 +6,7 @@ const site = {
 
 module.exports = function () {
   if (process.env.ELEVENTY_PRODUCTION) {
-    site.baseURL = 'https://b7s9.com/test/';
+    site.baseURL = 'https://b7s9.com/test';
   } else if (process.env.ELEVENTY_URL) {
     site.baseURL = process.env.ELEVENTY_URL
   } else {
