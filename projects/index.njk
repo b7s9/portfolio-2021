@@ -3,11 +3,13 @@
 {% block title %}b7s9 | Ben Schenerman{% endblock %}
 
 {% block content %}
-    <main>
+    <main class="col-start-1 col-span-6 lg:col-start-4 lg:col-span-6 xl:col-start-5 xl:col-span-4">
         <ul>
             {%- for project in collections.project -%}
                 <li>
-                    <a href="{{site.baseURL}}{{project.url}}">{{ project.data.title }}</a>
+                    <h2 class="title-gradient font-extrabold hover:text-gray-600">
+                        <a href="{{site.baseURL}}{{project.url}}">{{ project.data.title }}</a>
+                    </h2>
                 </li>
             {%- endfor -%}
         </ul>

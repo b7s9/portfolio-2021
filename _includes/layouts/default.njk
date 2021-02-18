@@ -27,11 +27,24 @@
         <script src="{{site.baseURL}}/js/alpine.js?v={% version %}"></script>
         {# <script src="{{site.baseURL}}/js/TinyGesture.js?v={% version %}"></script> #}
     </head>
-    <body>
+    <body class="bg-gray-50">
+
         {% include '../partials/nav.njk'%}
-        {% block content %}
-            {{ content | safe }}
-        {% endblock %}
+
+        <div class="p-4 lg:px-9 pb-9 grid grid-cols-6 gap-x-4 lg:grid-cols-12 lg:gap-x-9">
+            {% block content %}
+                {{ content | safe }}
+            {% endblock %}
+        </div>
+        <footer class="block fixed w-screen bottom-0 h-auto">
+            <div class="h-16 bg-gradient-to-t from-gray-50 z-30"></div>
+            {# <div class="absolute left-0 bottom-0 z-20 h-6 lg:h-auto">
+                <object data="{{site.baseURL}}/assets/images/left-palm.svg" type="image/svg+xml"></object>
+            </div>
+            <div class="absolute right-0 bottom-0 z-20 h-6 lg:h-auto">
+                <object data="{{site.baseURL}}/assets/images/right-palm.svg" type="image/svg+xml"></object>
+            </div> #}
+        </footer>
         <script src="{{site.baseURL}}/js/main.js?v={% version %}"></script>
         <script type="module" src="{{site.baseURL}}/js/swipe-handler.js?v={% version %}"></script>
     </body>
