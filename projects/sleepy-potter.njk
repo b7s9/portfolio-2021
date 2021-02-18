@@ -2,6 +2,7 @@
 tags: project
 title: Harry Potter Sleepytime Player
 slug: sleepy-potter
+description: A website designed to help my friend fall asleep to the Harry Potter audiobooks. Built with React, TailwindCSS, & Bash. Personal Project.
 status: Released
 client: My Friend Ellie, My Curiosity
 tools: [Sketch]
@@ -51,20 +52,20 @@ images: [affirmation, player, player-desktop]
         <p>I’m now in the midst of responding to usability feedback in new Figma designs, and building in new pages and features.</p>
 
         <h2>Feedback</h2>
-        <blockquote>
+        <blockquote class="italic pl-4 border-l-2 border-gray-400 ml-4 my-6">
             <p>do you have any feedback about the harry potter audio book website thing i could toss into my writeup of the project?</p>
-            <figcaption>&mdash; Ben</figcaption>
+            <figcaption class="not-italic">&mdash; Ben</figcaption>
         </blockquote>
-        <blockquote>
+        <blockquote class="italic pl-4 border-l-2 border-gray-400 ml-4 my-6">
             <p>Yes sure! I don’t know what the “seek” button means, and I wish there were a sleep timer shorter than the episode length
                 <i class="fas fa-heart text-red-600"></i>
                 but otherwise the controls are great!</p>
             <p>And I love the bedtime thought</p>
-            <figcaption>&mdash; Ellie</figcaption>
+            <figcaption class="not-italic">&mdash; Ellie</figcaption>
         </blockquote>
 
         <p>From this feedback I removed the “seek” control, which was meant to allow quick scrubbing through the file but was broken on ios, along with the volume slider. Gone are the days when Webkit used to be the premiere browser engine, lol.</p>
-        <p>I also added in a sleep timer which pauses the audio after the timer out.</p>
+        <p>I also added in a sleep timer which pauses the audio after the timer runs out.</p>
     </div>
 
 {% endblock %}

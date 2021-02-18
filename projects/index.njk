@@ -3,13 +3,24 @@
 {% block title %}b7s9 | Ben Schenerman{% endblock %}
 
 {% block content %}
-    <main class="col-start-1 col-span-6 lg:col-start-4 lg:col-span-6 xl:col-start-5 xl:col-span-4">
+    <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
         <ul>
             {%- for project in collections.project -%}
-                <li>
-                    <h2 class="title-gradient font-extrabold hover:text-gray-600">
+                <li class="mb-12">
+                    <h2 class="title-gradient text-4xl font-extrabold hover:text-gray-600">
                         <a href="{{site.baseURL}}{{project.url}}">{{ project.data.title }}</a>
                     </h2>
+                    <p class="mt-2">
+                        <span class="block mb-1">
+                            <strong>Client:</strong>
+                            {{project.data.client}}
+                        </span>
+                        <span class="block mb-1">
+                            <strong>Project Status:</strong>
+                            {{project.data.status}}
+                        </span>
+                    </p>
+                    <p class="mt-2">{{project.data.description}}</p>
                 </li>
             {%- endfor -%}
         </ul>
