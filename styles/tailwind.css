@@ -77,14 +77,14 @@
     }
 
     p {
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 1.1rem;
+        line-height: 1.4;
         margin-bottom: 1.25rem;
     }
 
     small {
         font-size: 0.825rem;
-        line-height: 1rem;
+        line-height: 1;
     }
 
     .title-gradient {
