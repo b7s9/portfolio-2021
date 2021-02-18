@@ -40,29 +40,31 @@
     </div>
 
     <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
-        <header>
+        <header class="lg:mt-12">
             <h1 class="text-4xl title-gradient">{{title}}</h1>
-            <p>
-                <strong>Client:</strong>
-                {{client}}
-            </p>
-            <p>
-                <strong>Project Status:</strong>
-                {{status}}
-            </p>
-            <p>
-                <strong>Tools:</strong>
+            <p class="mt-2">
+                <span class="block mb-1">
+                    <strong>Client:</strong>
+                    {{client}}
+                </span>
+                <span class="block mb-1">
+                    <strong>Project Status:</strong>
+                    {{status}}
+                </span>
+                <span class="block mb-1">
+                    <strong>Tools:</strong>
 
-                {% for tool in tools %}
-                    <span>{{tool}}</span>,
-                {% endfor %}
-            </p>
-            <p>
-                <strong>Tech:</strong>
+                    {% for tool in tools %}
+                        <span>{{tool}}</span>,
+                    {% endfor %}
+                </span>
+                <span class="block mb-1">
+                    <strong>Tech:</strong>
 
-                {% for techie in tech %}
-                    <span>{{techie}}</span>,
-                {% endfor %}
+                    {% for techie in tech %}
+                        <span>{{techie}}</span>,
+                    {% endfor %}
+                </span>
             </p>
 
         </header>
