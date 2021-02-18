@@ -92,4 +92,11 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    .business div {
+        background-color: #779E6D;
+    }
+    .chef div {
+        background-color: #DBD8D0;
+    }
 }
