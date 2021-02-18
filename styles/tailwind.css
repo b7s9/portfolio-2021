@@ -7,6 +7,39 @@
 }
 
 @layer base {
+    @font-face {
+        font-family:Piazzolla;
+        font-style:normal;
+        font-weight:100 900;
+        font-display:block;
+        src:url('../assets/fonts/Piazzolla[opsz,wght].woff2') format("woff2-variations"),
+        url('../assets/fonts/Piazzolla[opsz,wght].woff2') format("woff2")
+    }
+       @font-face {
+        font-family:Piazzolla;
+        font-style:italic;
+        font-weight:100 900;
+        font-display:block;
+        src: url('../assets/fonts/Piazzolla-Italic[opsz,wght].woff2') format("woff2-variations"),
+        url('../assets/fonts/Piazzolla-Italic[opsz,wght].woff2') format("woff2")
+    }
+    @font-face {
+        font-family: 'Overpass';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../assets/fonts/overpass-v5-latin-regular.woff2') format('woff2'), 
+            url('../assets/fonts/overpass-v5-latin-regular.woff') format('woff'); 
+    }
+  
+
+    h1,h2,h3,h4,h5,p,blockquote,figcaption,figure {
+        font-family: "Piazzolla", serif;        
+    }
+    
+    * {
+        font-family: "Overpass", serif;
+    }
+
     .title-gradient {
         @apply bg-gradient-to-b from-primary-light to-primary-dark;
         -webkit-background-clip: text;
