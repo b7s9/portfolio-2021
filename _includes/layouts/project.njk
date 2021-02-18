@@ -43,6 +43,11 @@
         <header class="lg:mt-12">
             <h1 class="text-4xl title-gradient">{{title}}</h1>
             <p class="mt-2">
+                <span class="block font-sans text-lg mb-3">
+                    {% for f in filters %}
+                        <span>{{filterNames[f]}}</span>,
+                    {% endfor %}
+                </span>
                 <span class="block mb-1">
                     <strong>Client:</strong>
                     {{client}}
@@ -66,7 +71,6 @@
                     {% endfor %}
                 </span>
             </p>
-
         </header>
 
         {% block projectContent %}
