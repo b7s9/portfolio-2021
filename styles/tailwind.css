@@ -31,14 +31,14 @@
             url('../assets/fonts/overpass-v5-latin-regular.woff') format('woff'); 
     }
   
+    body {
+        font-family: "Overpass", serif;
+    }
 
-    h1,h2,h3,h4,h5,p,blockquote,figcaption,figure {
+    h1,h2,h3,h4,h5,p,blockquote,figcaption,figure,ul,ol,li {
         font-family: "Piazzolla", serif;        
     }
     
-    * {
-        font-family: "Overpass", serif;
-    }
 
     .title-gradient {
         @apply bg-gradient-to-b from-primary-light to-primary-dark;
