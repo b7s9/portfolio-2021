@@ -34,7 +34,6 @@
                 <i class="fas fa-images cursor-pointer text-3xl lg:text-6xl"></i>
                 <i class="fas fa-arrow-right mx-4 text-lg text-gray-400"></i>
             </button>
-
         </div>
 
     </div>
@@ -45,7 +44,7 @@
             <p class="mt-2">
                 <span class="block font-sans text-lg mb-3">
                     {% for f in filters %}
-                        <span>{{filterNames[f]}}</span>,
+                        <span>{{filterNames[f].name}}</span>,
                     {% endfor %}
                 </span>
                 <span class="block mb-1">

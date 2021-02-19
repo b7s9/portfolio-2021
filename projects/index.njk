@@ -3,14 +3,33 @@
 {% block title %}b7s9 | Ben Schenerman{% endblock %}
 
 {% block content %}
-    <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
+    <aside class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
+        <div class="lg:fixed">
+
+            <div class="grid grid-cols-2 gap-x-2 md:grid-cols-4 lg:grid-cols-1 pb-4 lg:gap-y-6 lg:mt-12 lg:space-y-8 text-gray-800">
+                <span class="my-2 col-start-1 col-span-2 md:col-span-4 lg:col-span-1">Filter by type</span>
+                {% for f in filterNames.list %}
+                    <button @click="{{f}} = !{{f}}" class="p-2 my-2 lg:p-4 text-left lg:border-l-2 border-solid border-green-500 bg-transparent hover:bg-gray-100 focus:bg-gray-100 text-gray-800">
+                        <i class="mr-2 {{filterNames[f].icon}}"></i>
+                        {{filterNames[f].name}}
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+    </aside>
+    <main class="lg:mt-12 col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
         <ul>
             {%- for project in collections.project -%}
-                <li class="mb-12">
+                <li data-filters="{{project.data.filters}}" x-show.transition.95ms="audio" class="project-preview mb-12">
                     <h2 class="title-gradient text-4xl font-extrabold hover:text-gray-600">
                         <a href="{{site.baseURL}}{{project.url}}">{{ project.data.title }}</a>
                     </h2>
                     <p class="mt-2">
+                        <span class="block font-sans text-lg mb-3">
+                            {% for f in project.data.filters %}
+                                <span>{{filterNames[f].name}}</span>,
+                            {% endfor %}
+                        </span>
                         <span class="block mb-1">
                             <strong>Client:</strong>
                             {{project.data.client}}

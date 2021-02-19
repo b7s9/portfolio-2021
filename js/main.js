@@ -58,11 +58,30 @@ function checkKey(e) {
   else if (e.keyCode == '39') {
     b7s9.showGallery()
   }
-  // else if (e.keyCode == '38') {
-  //     // up arrow
-  // }
-  // else if (e.keyCode == '40') {
-  //     // down arrow
-  // }
 
 }
+
+
+// ------------------------
+
+function filters() {
+  return {
+    ux: true, ui: true, dev: true, audio: true,
+  }
+}
+
+// const projectPreviews = document.getElementsByClassName('project-preview')
+// if (projectPreviews.length > 0) {
+//   for (project of projectPreviews) {
+//     const filterString = project.getAttribute('data-filters')
+//     const projectFilters = filterString.split(',')
+//     console.log(project)
+//     for (filter of projectFilters) {
+//       console.log(filter)
+//     }
+//   }
+// }
+
+// function filterChange(filter){
+
+// }

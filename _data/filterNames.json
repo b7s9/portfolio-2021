@@ -1,6 +1,19 @@
 {
-  "ui": "UI Design",
-  "ux": "UX Research",
-  "dev": "Development",
-  "audio": "Music & Sound"
+  "list": ["ui", "ux", "dev", "audio"],
+  "ui": {
+    "name": "UI Design",
+    "icon": "fas fa-fill-drip"
+  },
+  "ux": {
+    "name": "UX Research",
+    "icon": "fas fa-hand-holding-heart"
+  },
+  "dev": {
+    "name": "Development",
+    "icon": "fas fa-code-branch"
+  },
+  "audio": {
+    "name": "Music & Sound",
+    "icon": "fas fa-volume-up"
+  }
 }
