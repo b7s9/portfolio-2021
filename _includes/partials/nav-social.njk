@@ -20,8 +20,8 @@
                 <input hidden="hidden" type="text" value="{{item.url}}" id="email-url">
             {% endif %} #}
 
-        <a class="block md:inline-block py-2 rounded text-gray-600" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
-            <i class="text-md mr-2 {{item.icon}}"></i>
+        <a class="block md:inline-block py-2 rounded text-gray-800 hover:text-primary-light" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
+            <i class="text-md mr-2 {{item.icon}} fa-fw"></i>
             <span>{{ item.text }}</span>
         </a>
     {% endfor %}

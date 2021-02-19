@@ -30,9 +30,9 @@
     </div>
 
     <button class="inline-block md:hidden text-2xl float-right text-gray-600 active:text-gray-400" @click="navOpen = true">
-        <i class="fas fa-ice-cream"></i>
+        <i class="fas fa-ice-cream fa-fw"></i>
     </button>
-    <div x-show.transition.95ms="navOpen" @click.away="navOpen = false" class="content-between mt-2 space-y-2">
+    <div x-show.transition.95ms="navOpen" @click.away="navOpen = false" class="content-between mt-4 space-y-2">
         {% include './nav-items.njk'%}
         {% include './nav-social.njk'%}
     </div>
