@@ -26,8 +26,20 @@ module.exports = {
         light: '#20791C',
         dark: '#093D0A'
       }
+    },
+    keyframes: {
+      wiggle: {
+        '0%': { transform: 'rotate(-3deg)' },
+        '100%': { transform: 'rotate(3deg)' },
+      }
+    },
+    animation: {
+      wiggle: 'wiggle 8s ease-in-out alternate infinite',
+      wiggleInverse: 'wiggle 7s ease-in-out alternate-reverse infinite',
     }
   },
-  variants: {},
+  variants: {
+    animation: ['responsive', 'motion-safe', 'motion-reduce']
+  },
   plugins: [],
 };
