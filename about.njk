@@ -34,23 +34,11 @@
             </div>
         </div>
 
-        <h2 class="text-2xl">Ideology</h2>
+        <h2 class="text-2xl mb-4">Ideology</h2>
         <ol class="list-decimal list-inside space-y-4">
-            <li>Projects are never complete, only abandoned.</li>
-            <li>Design is emotional.</li>
-            <li>Design is goal-oriented.</li>
-            <li>Design is manipulative. Manipulation is usually a good thing.</li>
-            <li>Understanding cognitive bias does not make you immune to it.</li>
-            <li>The universe is infinite. Human knowledge is not.</li>
-            <li>Language evolves over time. See below.</li>
-            <li>There are no rules, but there are consequences.</li>
-            <li>Emotion is the sum of environmental influence.</li>
-            <li>Personality is the sum of relationships.</li>
-            <li>Relationships are the result of systems. Systems are the result of power struggle.</li>
-            <li>Derived categorizations are tools of oppression.</li>
-            <li>Socialism promotes pro-social behavior. Capitalism promotes anti-social behavior.</li>
-            <li>All people are extensions of each other.
-            </li>
+            {% for aphorism in aphorisms.items %}
+                <li>{{aphorism}}</li>
+            {% endfor %}
         </ol>
     </div>
 {% endblock %}
