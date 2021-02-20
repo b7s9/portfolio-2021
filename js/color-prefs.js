@@ -8,19 +8,26 @@ if (localStorage.getItem(colorSchemeName) === 'dark' || (!(colorSchemeName in lo
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const darkToggle = document.getElementById('dark-toggle')
-  const lightToggle = document.getElementById('light-toggle')
-  const systemToggle = document.getElementById('system-toggle')
+  const darkToggles = document.getElementsByClassName('dark-toggle')
+  const lightToggles = document.getElementsByClassName('light-toggle')
+  const systemToggles = document.getElementsByClassName('system-toggle')
 
-  darkToggle.addEventListener('click', e => {
-    localStorage.setItem(colorSchemeName, 'dark')
-    document.documentElement.classList.add('dark')
-  })
-  lightToggle.addEventListener('click', e => {
-    localStorage.setItem(colorSchemeName, 'light')
-    document.documentElement.classList.remove('dark')
-  })
-  systemToggle.addEventListener('click', e => {
-    localStorage.removeItem(colorSchemeName)
-  })
+  for (toggle of darkToggles) {
+    toggle.addEventListener('click', e => {
+      localStorage.setItem(colorSchemeName, 'dark')
+      document.documentElement.classList.add('dark')
+
+    })
+  }
+  for (toggle of lightToggles) {
+    toggle.addEventListener('click', e => {
+      localStorage.setItem(colorSchemeName, 'light')
+      document.documentElement.classList.remove('dark')
+    })
+  }
+  for (toggle of systemToggles) {
+    toggle.addEventListener('click', e => {
+      localStorage.removeItem(colorSchemeName)
+    })
+  }
 })
