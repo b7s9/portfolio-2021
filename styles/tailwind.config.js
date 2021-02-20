@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  darkMode: 'class',
   purge: {
     content: ["_site/**/*.html"],
     options: {
@@ -8,7 +9,20 @@ module.exports = {
     },
   },
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        wiggle: {
+          '0%': { transform: 'rotate(-3deg)' },
+          '100%': { transform: 'rotate(3deg)' },
+        }
+      },
+      animation: {
+        spin: 'spin 4s linear infinite',
+        spinLong: 'spin 12s linear infinite',
+        wiggle: 'wiggle 8s ease-in-out alternate infinite',
+        wiggleInverse: 'wiggle 7s ease-in-out alternate-reverse infinite',
+      },
+    },
     fontFamily: {
       'sans': ['Overpass, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'],
       'serif': ['Piazzolla, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'],
@@ -27,19 +41,11 @@ module.exports = {
         dark: '#093D0A'
       }
     },
-    keyframes: {
-      wiggle: {
-        '0%': { transform: 'rotate(-3deg)' },
-        '100%': { transform: 'rotate(3deg)' },
-      }
-    },
-    animation: {
-      wiggle: 'wiggle 8s ease-in-out alternate infinite',
-      wiggleInverse: 'wiggle 7s ease-in-out alternate-reverse infinite',
-    }
   },
   variants: {
-    animation: ['responsive', 'motion-safe', 'motion-reduce']
+    animation: ['responsive', 'motion-safe', 'motion-reduce'],
+    lineHeight: ['dark'],
+    fontSize: ['responsive', 'dark']
   },
   plugins: [],
 };

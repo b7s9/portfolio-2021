@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {}
+@layer utilities {
+    .anim-none {
+        animation: none !important;
+    }
+
+    .filter-btn-active {
+        @apply border-green-500 text-primary-light dark:text-green-400;
+    }
+}
 
 @layer base {
     @font-face {
@@ -48,7 +56,7 @@
     ul,
     ol,
     li {
-        @apply font-serif;
+        @apply font-serif text-gray-900 dark:text-gray-50;
     }
 
     h1 {
@@ -77,11 +85,15 @@
     }
 
     p, div.p {
-        @apply font-serif;
         font-size: 1.05rem;
         line-height: 1.4;
+        @apply font-serif dark:leading-relaxed dark:text-gray-100;
         margin-bottom: 1.25rem;
-    }    
+    }
+
+    ul, li {
+        @apply dark:leading-relaxed;
+    }
 
     small {
         font-size: 0.825rem;
@@ -97,7 +109,7 @@
     }
 
     .title-gradient {
-        @apply bg-gradient-to-b from-primary-light to-primary-dark;
+        @apply bg-gradient-to-b from-primary-light to-primary-dark dark:from-green-200 dark:to-primary-light;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }

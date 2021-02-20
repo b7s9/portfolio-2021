@@ -25,9 +25,9 @@
 
         {% block head %}{% endblock %}
         <script src="{{site.baseURL}}/js/alpine.js?v={% version %}"></script>
-        {# <script src="{{site.baseURL}}/js/TinyGesture.js?v={% version %}"></script> #}
+        <script src="{{site.baseURL}}/js/color-prefs.js?v={% version %}"></script>
     </head>
-    <body class="bg-gray-50">
+    <body class="bg-gray-50 dark:bg-gray-800 min-h-screen">
 
         {% include '../partials/nav.njk'%}
 
@@ -37,10 +37,10 @@
             {% endblock %}
         </div>
         <footer class="block fixed w-screen bottom-0 h-auto z-30">
-            <div class="h-16 bg-gradient-to-t from-gray-50"></div>
+            <div class="h-16 bg-gradient-to-t from-gray-50 dark:from-gray-900"></div>
             <div class="absolute left-0 bottom-0 z-20 lg:h-auto">
                 <div class="relative h-20 w-20 inline-block">
-                    <svg class="motion-safe:animate-wiggleInverse absolute z-20 transform -ml-4 mt-10 h-32 w-20 lg:-ml-8 lg:-mt-8 lg:h-72 lg:w-60" width="100%" height="100%" viewbox="0 0 441 528" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <svg class="anim-target motion-safe:animate-wiggleInverse absolute z-20 transform -ml-4 mt-10 h-32 w-20 lg:-ml-8 lg:-mt-8 lg:h-72 lg:w-60" width="100%" height="100%" viewbox="0 0 441 528" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                         <g transform="matrix(1,0,0,1,-694,-40)">
                             <g>
                                 <g transform="matrix(107.512,0,0,-107.512,1026.92,150.175)">
@@ -142,7 +142,7 @@
                             <lineargradient id="_Linear23" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(1,0,0,-1,0,0.00229092)"><stop offset="0" style="stop-color:rgb(41,131,65);stop-opacity:1"/><stop offset="0.02" style="stop-color:rgb(41,131,65);stop-opacity:1"/><stop offset="0.5" style="stop-color:rgb(0,109,79);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(0,74,51);stop-opacity:1"/></lineargradient>
                         </defs>
                     </svg>
-                    <svg class="motion-safe:animate-wiggle z-30 transform h-32 w-20 -ml-9 mt-2 lg:-ml-24 lg:-mt-28 lg:h-80 lg:w-56" width="100%" height="100%" viewbox="0 0 413 530" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <svg class="anim-target motion-safe:animate-wiggle z-30 transform h-32 w-20 -ml-9 mt-2 lg:-ml-24 lg:-mt-28 lg:h-80 lg:w-56" width="100%" height="100%" viewbox="0 0 413 530" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                         <g transform="matrix(1,0,0,1,-937,-685)">
                             <g>
                                 <g transform="matrix(234.341,0,0,-234.341,984.103,974.177)">
@@ -254,6 +254,7 @@
             </div>
         </footer>
         <script src="{{site.baseURL}}/js/main.js?v={% version %}"></script>
+        <script src="{{site.baseURL}}/js/anim-prefs.js?v={% version %}"></script>
         <script type="module" src="{{site.baseURL}}/js/swipe-handler.js?v={% version %}"></script>
     </body>
 </html>
