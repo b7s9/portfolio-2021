@@ -8,11 +8,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
 
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
+    "./node_modules/alpinejs/dist/alpine.js": "./js/lib/alpine.js",
   });
 
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/tinygesture/TinyGesture.js": "./js/TinyGesture.js"
+    "./node_modules/tinygesture/TinyGesture.js": "./js/lib/TinyGesture.js"
   })
 
   eleventyConfig.addPassthroughCopy({ "assets/": "assets/" })
