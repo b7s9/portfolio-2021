@@ -24,17 +24,18 @@
         </svg>
     </a>
     {# desktop nav  #}
-    <div class="hidden md:inline-block space-x-4">
+    <div class="inline-block space-x-4">
         {% include './nav-items.njk'%}
+    </div>
+    <div class="hidden md:inline-block space-x-4">
         {% include './nav-social.njk'%}
         {% include './nav-prefs.njk'%}
     </div>
 
-    <button class="inline-block md:hidden text-2xl float-right text-gray-600 active:text-gray-400" @click="navOpen = true">
+    <button class="inline-block md:hidden py-1 text-2xl float-right text-gray-600 active:text-gray-400" @click="navOpen = true">
         <i class="fas fa-ice-cream fa-fw"></i>
     </button>
     <div x-show.transition.95ms="navOpen" @click.away="navOpen = false" class="content-between mt-4 space-y-2">
-        {% include './nav-items.njk'%}
         {% include './nav-social.njk'%}
         {% include './nav-prefs.njk'%}
     </div>
