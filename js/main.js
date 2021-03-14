@@ -21,11 +21,11 @@ b7s9 = {
   },
   updateActiveColor: function () {
     if (this.textContentActive) {
-      this.textIndicator.classList.add('text-primary-light')
-      this.galleryIndicator.classList.remove('text-primary-light')
+      this.textIndicator.classList.add('indicator-active')
+      this.galleryIndicator.classList.remove('indicator-active')
     } else {
-      this.textIndicator.classList.remove('text-primary-light')
-      this.galleryIndicator.classList.add('text-primary-light')
+      this.textIndicator.classList.remove('indicator-active')
+      this.galleryIndicator.classList.add('indicator-active')
     }
   }
 }

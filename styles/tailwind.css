@@ -8,7 +8,11 @@
     }
 
     .filter-btn-active {
-        @apply border-green-500 text-primary-light dark:text-green-400;
+        @apply border-primary-500 text-primary-dark dark:text-primary-light;
+    }
+
+    .indicator-active {
+        @apply text-primary-dark dark:text-primary-light;
     }
 }
 
@@ -106,6 +110,10 @@
 
     nav {
         @apply font-sans;
+    }
+
+    .title-primary {
+        @apply text-primary-dark dark:text-primary-light;
     }
 
     .title-gradient {
