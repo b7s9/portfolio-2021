@@ -1,11 +1,20 @@
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 const lsNamespace = 'b7s9portfolio2021'
 const colorSchemeName = lsNamespace + 'colorScheme'
-if (localStorage.getItem(colorSchemeName) === 'dark' || (!(colorSchemeName in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  document.documentElement.classList.add('dark')
-} else {
-  document.documentElement.classList.remove('dark')
+
+function getSystemTheme() {
+  return localStorage.getItem(colorSchemeName) === 'dark' || (!(colorSchemeName in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 }
+
+function applySystemTheme() {
+  if (getSystemTheme()) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+}
+
+applySystemTheme()
 
 document.addEventListener('DOMContentLoaded', () => {
   const darkToggles = document.getElementsByClassName('dark-toggle')
@@ -28,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   for (toggle of systemToggles) {
     toggle.addEventListener('click', e => {
       localStorage.removeItem(colorSchemeName)
+      applySystemTheme()
     })
   }
 })
