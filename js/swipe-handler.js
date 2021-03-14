@@ -1,4 +1,4 @@
-import TinyGesture from './TinyGesture.js';
+import TinyGesture from './lib/TinyGesture.js';
 let textContent = b7s9.textContent
 let galleryContent = b7s9.galleryContent
 

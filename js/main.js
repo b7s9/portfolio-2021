@@ -20,12 +20,12 @@ b7s9 = {
     this.updateActiveColor()
   },
   updateActiveColor: function () {
-    if (b7s9.textContentActive) {
-      textIndicator.classList.add('text-primary-light')
-      galleryIndicator.classList.remove('text-primary-light')
+    if (this.textContentActive) {
+      this.textIndicator.classList.add('text-primary-light')
+      this.galleryIndicator.classList.remove('text-primary-light')
     } else {
-      textIndicator.classList.remove('text-primary-light')
-      galleryIndicator.classList.add('text-primary-light')
+      this.textIndicator.classList.remove('text-primary-light')
+      this.galleryIndicator.classList.add('text-primary-light')
     }
   }
 }
@@ -115,12 +115,10 @@ function showProject(project) {
 }
 
 function activateButton(button) {
-  button.classList.add('text-gray-800', 'border-green-500', 'text-primary-light')
-  button.classList.remove('text-gray-600', 'border-gray-300')
+  button.classList.add('filter-btn-active')
 }
 function deactivateButton(button) {
-  button.classList.remove('text-gray-800', 'border-green-500', 'text-primary-light')
-  button.classList.add('text-gray-600', 'border-gray-300')
+  button.classList.remove('filter-btn-active')
 }
 
 // ---------------------
