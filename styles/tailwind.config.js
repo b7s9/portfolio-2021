@@ -20,9 +20,9 @@ module.exports = {
       },
       animation: {
         spin: 'spin 4s linear infinite',
-        spinLong: 'spin 12s linear infinite',
-        wiggle: 'wiggle 8s ease-in-out alternate infinite',
-        wiggleInverse: 'wiggle 7s ease-in-out alternate-reverse infinite',
+        spinLong: 'spin 8s linear infinite',
+        wiggle: 'wiggle 6s ease-in-out alternate infinite',
+        wiggleInverse: 'wiggle 5s ease-in-out alternate-reverse infinite',
       },
     },
     fontFamily: {
