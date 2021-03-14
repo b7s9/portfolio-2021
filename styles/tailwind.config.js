@@ -39,8 +39,18 @@ module.exports = {
       green: colors.green,
       red: colors.rose,
       primary: {
-        light: '#20791C',
-        dark: '#093D0A'
+        50: '#E0FBEC',
+        100: '#C4FCDD',
+        200: '#A0F5C5',
+        300: '#85DDAC',
+        400: '#6FCC99',
+        500: '#36B971',
+        600: '#2AA863',
+        700: '#278752',
+        800: '#136739',
+        900: '#16492D',
+        light: '#85DDAC',
+        dark: '#136739'
       }
     },
   },
