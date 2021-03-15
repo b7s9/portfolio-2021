@@ -2,35 +2,29 @@
 <html lang="en">
     <head>
         <title>
-            {% block title %}b7s9 | Ben Schenerman{% endblock %}
+            {% block title %}b7s9 | Ben Schenerman
+            {% endblock %}
         </title>
         <meta charset="UTF-8"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="{{site.baseURL}}/favicon.ico/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseURL}}/favicon.ico/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseURL}}/favicon.ico/favicon-16x16.png">
-
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseURL }}/favicon.ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseURL }}/favicon.ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseURL }}/favicon.ico/favicon-16x16.png">
         <meta name="og:type" content="website"/>
-        <meta name="og:title" content="{{site.title}}"/>
-        <meta name="og:image" content="{{site.baseURL}}/favicon.ico/android-chrome-192x192.png"/>
-        <meta name="og:description" content="{{site.description}}"/>
-        <meta name="description" content="{{site.description}}"/>
-
+        <meta name="og:title" content="{{ site.title }}"/>
+        <meta name="og:image" content="{{ site.baseURL }}/favicon.ico/android-chrome-192x192.png"/>
+        <meta name="og:description" content="{{ site.description }}"/>
+        <meta name="description" content="{{ site.description }}"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-
-        <link rel="stylesheet" href="{{site.baseURL}}/style.css?v={% version %}"/>
-        <link rel="stylesheet" href="{{site.baseURL}}/assets/fontawesome/css/fontawesome.css?v={% version %}"/>
-        <link rel="stylesheet" href="{{site.baseURL}}/assets/fontawesome/css/brands.css?v={% version %}"/>
-        <link rel="stylesheet" href="{{site.baseURL}}/assets/fontawesome/css/solid.css?v={% version %}"/>
-
-        {% block head %}{% endblock %}
-        <script src="{{site.baseURL}}/js/lib/alpine.js?v={% version %}"></script>
-        <script src="{{site.baseURL}}/js/color-prefs.js?v={% version %}"></script>
+        <link rel="stylesheet" href="{{ site.baseURL }}/style.css?v={% version %}"/>
+        <link rel="stylesheet" href="{{ site.baseURL }}/assets/fontawesome/css/fontawesome.css?v={% version %}"/>
+        <link rel="stylesheet" href="{{ site.baseURL }}/assets/fontawesome/css/brands.css?v={% version %}"/>
+        <link rel="stylesheet" href="{{ site.baseURL }}/assets/fontawesome/css/solid.css?v={% version %}"/> {% block head %}{% endblock %}
+        <script src="{{ site.baseURL }}/js/lib/alpine.js?v={% version %}"></script>
+        <script src="{{ site.baseURL }}/js/color-prefs.js?v={% version %}"></script>
     </head>
     <body class="bg-gray-50 dark:bg-gray-800 min-h-screen">
-
-        {% include '../partials/nav.njk'%}
-
+        {% include '../partials/nav.njk' %}
         <div x-data="{ ux: true, ui: true, dev: true, audio: true }" class="p-4 lg:px-9 pb-9 grid grid-cols-6 gap-x-4 lg:grid-cols-12 lg:gap-x-9">
             {% block content %}
                 {{ content | safe }}
@@ -253,8 +247,8 @@
                 {# <object class=" h-28 w-28 inline-block" data="{{site.baseURL}}/assets/images/right-palm.svg" type="image/svg+xml"></object> #}
             </div>
         </footer>
-        <script src="{{site.baseURL}}/js/main.js?v={% version %}"></script>
-        <script src="{{site.baseURL}}/js/anim-prefs.js?v={% version %}"></script>
-        <script type="module" src="{{site.baseURL}}/js/swipe-handler.js?v={% version %}"></script>
+        <script src="{{ site.baseURL }}/js/main.js?v={% version %}"></script>
+        <script src="{{ site.baseURL }}/js/anim-prefs.js?v={% version %}"></script>
+        <script type="module" src="{{ site.baseURL }}/js/swipe-handler.js?v={% version %}"></script>
     </body>
 </html>
