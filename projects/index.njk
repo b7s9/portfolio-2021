@@ -1,17 +1,15 @@
 {% extends "layouts/default.njk" %}
-
-{% block title %}b7s9 | Ben Schenerman{% endblock %}
-
+{% block title %}b7s9 | Ben Schenerman
+{% endblock %}
 {% block content %}
     <aside class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
         <div class="lg:fixed">
-
             <div class="filters grid grid-cols-2 gap-x-2 md:grid-cols-4 lg:grid-cols-1 pb-4 lg:gap-y-6 lg:mt-12 lg:space-y-8 text-gray-800 dark:text-gray-200">
-                <span class="my-2 col-start-1 col-span-2 md:col-span-4 lg:col-span-1">Filter by type</span>
+                <span id="projects-showing" class="my-2 col-start-1 col-span-2 md:col-span-4 lg:col-span-1"></span>
                 {% for f in filterNames.list %}
-                    <button data-filter-name="{{f}}" class="p-2 my-2 lg:p-4 text-left border-l-2 border-gray-300 focus:outline-none border-solid bg-transparent hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-600 dark:focus:bg-gray-600">
-                        <i class="mr-2 {{filterNames[f].icon}} fa-fw"></i>
-                        {{filterNames[f].name}}
+                    <button data-filter-name="{{ f }}" class="p-2 my-2 lg:p-4 text-left border-l-2 border-gray-300 focus:outline-none border-solid bg-transparent hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-600 dark:focus:bg-gray-600">
+                        <i class="mr-2 {{ filterNames[f].icon }} fa-fw"></i>
+                        {{ filterNames[f].name }}
                     </button>
                 {% endfor %}
             </div>
@@ -20,26 +18,26 @@
     <main class="lg:mt-12 col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
         <ul>
             {%- for project in collections.project -%}
-                <li data-filters="{{project.data.filters}}" class="project-preview mb-12">
+                <li data-filters="{{ project.data.filters }}" class="project-preview mb-12">
                     <h2 class="text-4xl font-extrabold title-primary hover:text-gray-600">
-                        <a href="{{site.baseURL}}{{project.url}}">{{ project.data.title }}</a>
+                        <a href="{{ site.baseURL }}{{ project.url }}">{{ project.data.title }}</a>
                     </h2>
                     <p class="mt-2">
                         <span class="block font-sans text-lg mb-3">
                             {% for f in project.data.filters %}
-                                <span>{{filterNames[f].name}}</span>,
+                                <span>{{ filterNames[f].name }}</span>,
                             {% endfor %}
                         </span>
                         <span class="block mb-1">
                             <strong>Client:</strong>
-                            {{project.data.client}}
+                            {{ project.data.client }}
                         </span>
                         <span class="block mb-1">
                             <strong>Project Status:</strong>
-                            {{project.data.status}}
+                            {{ project.data.status }}
                         </span>
                     </p>
-                    <p class="mt-2">{{project.data.description}}</p>
+                    <p class="mt-2">{{ project.data.description }}</p>
                 </li>
             {%- endfor -%}
         </ul>

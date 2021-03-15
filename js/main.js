@@ -77,12 +77,15 @@ let filterState = {
 // ---------------------
 
 const projectPreviews = document.getElementsByClassName('project-preview')
+updateProjectsShown(projectPreviews.length)
 
 function updateProjectDisplay() {
+  let projectsShown = 0;
   for (project of projectPreviews) {
 
     if (isFilterStateEmpty()) { // if no filters are active, show all projects
       showProject(project)
+      projectsShown++;
       continue;
     }
 
@@ -100,16 +103,26 @@ function updateProjectDisplay() {
     }
     if (anyMatch) {
       showProject(project)
+      projectsShown++;
     } else {
       hideProject(project)
     }
+  }
+
+  updateProjectsShown(projectsShown)
+}
+
+function updateProjectsShown(index) {
+  if (index == 1) {
+    document.getElementById('projects-showing').innerText = index + ' project shown'
+  } else {
+    document.getElementById('projects-showing').innerText = index + ' projects shown'
   }
 }
 
 function hideProject(project) {
   project.classList.add('hidden')
 }
-
 function showProject(project) {
   project.classList.remove('hidden')
 }
