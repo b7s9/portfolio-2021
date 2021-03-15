@@ -1,27 +1,22 @@
 {% if navigation.social %}
-
     {% for item in navigation.social %}
         {% set externalAttribute = '' %}
         {% set currentAttribute = '' %}
         {% set emailId = '' %}
-
         {% if item.external %}
             {% set externalAttribute = ' rel="external" target="blank"' %}
         {% endif %}
-
         {% if page.url == item.url %}
             {% set currentAttribute = ' aria-current="page"' %}
         {% endif %}
-
         {# {% if item.email %}
-            {% set emailId = 'id="email"' %}
-        {% endif %} #}
+                    {% set emailId = 'id="email"' %}
+                {% endif %} #}
         {# {% if item.email %}
-                <input hidden="hidden" type="text" value="{{item.url}}" id="email-url">
-            {% endif %} #}
-
-        <a class="block md:inline-block py-2 rounded text-gray-800 dark:text-gray-300 hover:text-primary-dark dark:hover:text-primary-light" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
-            <i class="text-md mr-2 {{item.icon}} fa-fw"></i>
+                        <input hidden="hidden" type="text" value="{{item.url}}" id="email-url">
+                    {% endif %} #}
+        <a class="block md:inline-block py-2 rounded nav-item-color" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
+            <i class="text-md mr-2 {{ item.icon }} fa-fw"></i>
             <span>{{ item.text }}</span>
         </a>
     {% endfor %}

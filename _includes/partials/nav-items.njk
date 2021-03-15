@@ -2,16 +2,13 @@
     {% for item in navigation.items %}
         {% set externalAttribute = '' %}
         {% set currentAttribute = '' %}
-
         {% if item.external %}
             {% set externalAttribute = ' rel="external"' %}
         {% endif %}
-
         {% if page.url == item.url %}
             {% set currentAttribute = ' aria-current="page"' %}
         {% endif %}
-
-        <a class="inline-block py-2 rounded text-gray-800 hover:text-primary-dark dark:text-gray-300 dark:hover:text-primary-light " href="{{ site.baseURL }}{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
+        <a class="inline-block py-2 rounded nav-item-color" href="{{ site.baseURL }}{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
             {{ item.text }}
         </a>
     {% endfor %}

@@ -122,6 +122,10 @@
         -webkit-text-fill-color: transparent;
     }
 
+    .nav-item-color {
+        @apply text-gray-800 dark:text-gray-300 hover:text-primary-dark dark:hover:text-primary-light;
+    }
+
     .business div {
         background-color: #779E6D;
     }
