@@ -113,11 +113,7 @@ function updateProjectDisplay() {
 }
 
 function updateProjectsShown(index) {
-  if (index == 1) {
-    document.getElementById('projects-showing').innerText = index + ' project shown'
-  } else {
-    document.getElementById('projects-showing').innerText = index + ' projects shown'
-  }
+  document.getElementById('projects-showing').innerText = index + '/' + projectPreviews.length
 }
 
 function hideProject(project) {
