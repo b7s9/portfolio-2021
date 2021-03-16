@@ -1,4 +1,4 @@
-// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+// On page load or when changing themes, best to add inline in `head` to avoid Flash Of Unstyled Content (FOUC)
 const lsNamespace = 'b7s9portfolio2021'
 const colorSchemeName = lsNamespace + 'colorScheme'
 
@@ -20,7 +20,6 @@ function getSystemTheme() {
   } else {
     result = 'light'
   }
-  console.log(result)
   return result
 }
 initTheme = getSystemTheme()
