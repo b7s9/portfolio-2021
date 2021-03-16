@@ -77,7 +77,7 @@ let filterState = {
 // ---------------------
 
 const projectPreviews = document.getElementsByClassName('project-preview')
-updateProjectsShown(projectPreviews.length)
+projectPreviews.length > 0 && updateProjectsShown(projectPreviews.length)
 
 function updateProjectDisplay() {
   let projectsShown = 0;
