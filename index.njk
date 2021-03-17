@@ -1,3 +1,6 @@
+---
+images: [left-hand, middle-hand, right-hand]
+---
 {% extends "layouts/default.njk" %}
 
 {% block title %}b7s9 | Ben Schenerman{% endblock %}
@@ -7,7 +10,15 @@
         {# <div class="inline-block">
             {% include 'partials/nav-social.njk'%}
         </div> #}
-        <a href="{{ site.baseURL }}/projects/" class="block my-4 text-3xl font-serif dark:text-gray-200">Design & Audio</a>
-        <a href="{{ site.baseURL }}/about/" class="block my-4 text-lg font-serif dark:text-gray-300">Ben Schenerman (b7s9)</a>
+        <div class="index-title md:mt-12">
+            <a href="{{ site.baseURL }}/projects/" class="title-primary my-4 text-7xl font-bold md:text-8xl lg:text-9xl">Design &amp; Audio</a>
+            <a href="{{ site.baseURL }}/about/" class="title-secondary my-12 text-5xl md:text-6xl lg:text-7xl ">Ben Schenerman (b7s9)</a>
+        </div>
+
+
+
+        <div class="hands absolute top-2/3 sm:top-1/2 right-0 origin-center overflow-hidden">
+            <img src="{{ site.baseURL }}/assets/images/hands/all-hands.png" alt="all hands" class="anim-target">            
+        </div>
     </main>
 {% endblock %}

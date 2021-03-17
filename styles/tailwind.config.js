@@ -16,6 +16,10 @@ module.exports = {
         wiggle: {
           '0%': { transform: 'rotate(-3deg)' },
           '100%': { transform: 'rotate(3deg)' },
+        },
+        push: {
+          '0%': { transform: 'translateY(1rem)' },
+          '100%': { transform: 'translateY(-1rem)' },
         }
       },
       animation: {
@@ -23,6 +27,9 @@ module.exports = {
         spinLong: 'spin 8s linear infinite',
         wiggle: 'wiggle 6s ease-in-out alternate infinite',
         wiggleInverse: 'wiggle 5s ease-in-out alternate-reverse infinite',
+        push: 'push 6s ease-in-out alternate infinite',
+        pushAlt: 'push 4s ease-in-out alternate infinite',
+        pushInverse: 'push 5s ease-in-out alternate-reverse infinite'
       },
     },
     fontFamily: {
