@@ -1,8 +1,6 @@
 {% extends "layouts/default.njk" %}
-{% from "partials/macros.njk" import projectGallery%}
-
-{{title}}
-
+{% from "partials/macros.njk" import projectGallery %}
+{{ title }}
 {% block content %}
     <div x-data="{ imgModal : false, imgModalSrc : '', imgModalDesc : '' }">
         <template @img-modal.window="imgModal = true; imgModalSrc = $event.detail.imgModalSrc; imgModalDesc = $event.detail.imgModalDesc;" x-if="imgModal">
@@ -17,70 +15,61 @@
                     </div>
                     <div class="p-2">
                         <img :alt="imgModalSrc" class="object-contain w-100-screen" :src="imgModalSrc">
-                        <p x-text="imgModalDesc" class="text-center text-white"></p>
+                            <p x-text="imgModalDesc" class="text-center text-white mt-2"></p>
+                        </div>
                     </div>
                 </div>
+            </template>
+        </div>
+        <div class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
+            <div class="flex justify-center align-middle space-x-12 pb-4 lg:fixed lg:inline-block lg:space-x-0 lg:top-1/3 lg:space-y-8 text-gray-800 dark:text-gray-300">
+                <button id="text-indicator" class="flex items-center hover:text-gray-600">
+                    <i class="fas fa-arrow-left mx-4 text-lg text-gray-400 dark:text-gray-600"></i>
+                    <i class="fas fa-font cursor-pointer text-3xl lg:text-6xl"></i>
+                </button>
+                <button id="gallery-indicator" class="flex items-center hover:text-gray-600">
+                    <i class="fas fa-images cursor-pointer text-3xl lg:text-6xl"></i>
+                    <i class="fas fa-arrow-right mx-4 text-lg text-gray-400 dark:text-gray-600"></i>
+                </button>
             </div>
-        </template>
-    </div>
-
-    <div class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
-        <div class="flex justify-center align-middle space-x-12 pb-4 lg:fixed lg:inline-block lg:space-x-0 lg:top-1/3 lg:space-y-8 text-gray-800 dark:text-gray-300">
-            <button id="text-indicator" class="flex items-center hover:text-gray-600">
-                <i class="fas fa-arrow-left mx-4 text-lg text-gray-400 dark:text-gray-600"></i>
-                <i class="fas fa-font cursor-pointer text-3xl lg:text-6xl"></i>
-            </button>
-            <button id="gallery-indicator" class="flex items-center hover:text-gray-600">
-                <i class="fas fa-images cursor-pointer text-3xl lg:text-6xl"></i>
-                <i class="fas fa-arrow-right mx-4 text-lg text-gray-400 dark:text-gray-600"></i>
-            </button>
         </div>
-
-    </div>
-
-    <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
-        <header class="lg:mt-12">
-            <h1 class="text-4xl title-primary">{{title}}</h1>
-            <p class="mt-2">
-                <span class="block font-sans text-lg mb-3">
-                    {% for f in filters %}
-                        <span>{{filterNames[f].name}}</span>,
-                    {% endfor %}
-                </span>
-                <span class="block mb-1">
-                    <strong>Client:</strong>
-                    {{client}}
-                </span>
-                <span class="block mb-1">
-                    <strong>Project Status:</strong>
-                    {{status}}
-                </span>
-                <span class="block mb-1">
-                    <strong>Tools:</strong>
-
-                    {% for tool in tools %}
-                        <span>{{tool}}</span>,
-                    {% endfor %}
-                </span>
-                <span class="block mb-1">
-                    <strong>Tech:</strong>
-
-                    {% for techie in tech %}
-                        <span>{{techie}}</span>,
-                    {% endfor %}
-                </span>
-            </p>
-        </header>
-
-        {% block projectContent %}
-            {{ projectContent | safe }}
-        {% endblock %}
-
-        {% set directory = site.baseURL + "/assets/project-galleries/" + slug %}
-
-        <div id="gallery-content" hidden="hidden" x-data="{}">
-            {{projectGallery( directory, images )}}
-        </div>
-
-    </main>
-{% endblock %}
+        <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
+            <header class="lg:mt-12">
+                <h1 class="text-4xl title-primary">{{ title }}</h1>
+                <p class="mt-2">
+                    <span class="block font-sans text-lg mb-3">
+                        {% for f in filters %}
+                            <span>{{ filterNames[f].name }}</span>,
+                        {% endfor %}
+                    </span>
+                    <span class="block mb-1">
+                        <strong>Client:</strong>
+                        {{ client }}
+                    </span>
+                    <span class="block mb-1">
+                        <strong>Project Status:</strong>
+                        {{ status }}
+                    </span>
+                    <span class="block mb-1">
+                        <strong>Tools:</strong>
+                        {% for tool in tools %}
+                            <span>{{ tool }}</span>,
+                        {% endfor %}
+                    </span>
+                    <span class="block mb-1">
+                        <strong>Tech:</strong>
+                        {% for techie in tech %}
+                            <span>{{ techie }}</span>,
+                        {% endfor %}
+                    </span>
+                </p>
+            </header>
+            {% block projectContent %}
+                {{ projectContent | safe }}
+            {% endblock %}
+            {% set directory = site.baseURL + "/assets/project-galleries/" + slug %}
+            <div id="gallery-content" hidden="hidden" x-data="{}">
+                {{ projectGallery( directory, images ) }}
+            </div>
+        </main>
+    {% endblock %}
