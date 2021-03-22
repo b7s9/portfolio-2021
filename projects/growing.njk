@@ -1,0 +1,34 @@
+---
+tags: project
+title: Growing
+slug: growing
+description: A 3D platformer game for PC, where I handled UI, Playtesting research & insights, Sound effects, and branding assets. Built in Unity. Senior Project.
+filters: [ui, ux, dev, audio]
+status: Beta, ongoing
+client: Drexel University
+tools: [Figma, Unity, Affinity Suite, Sketch, Openshot Video Editor]
+tech: [11ty, Nunjucks, TailwindCSS, R Studio]
+images: []
+---
+{% extends "layouts/project.njk" %}
+
+{% block title %}{{title}}
+{% endblock %}
+
+{% block projectContent %}
+    <div id="text-content">
+        <h2>In-engine Interface</h2>
+        <p>In my competition research prior to designing the UI for this game, I found that motion and ambience were the most important factors in my feelings towards the UI and its ease of use. In Unity I had easier access to animation, so I tried to take advantage of that for this project.</p>
+
+        <h2>Playtesting/User Experience</h2>
+        <p>We conducted four playtests. For each, I planned the data collection strategy, designed surveys, wrote scripts for observational testing, analyzed results in R, and created insight presentations.</p>
+        <p>For the story aspects of the game, I measured engagement based on anxious/avoidant attachment to the narrator, empathy towards the characters, and feelings of scale regarding the story universe.</p>
+        <p>For the platforming aspects of the game, I measured success as a rate of item collection in each area, time spent on various challenges, and progression through the game.</p>
+
+        <h2>Promotional materials</h2>
+        <p>I designed the logo, created the website, and produced the teaser trailer (with original music).</p>
+
+        <h2>Audio</h2>
+        <p>I created original music for the menu and trailer, foley &amp; sound effects for the playable character, and ambience for scenes.</p>
+    </div>
+{% endblock %}
