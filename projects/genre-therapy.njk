@@ -10,17 +10,25 @@ tools: [Logic Pro X, Ableton Live 10]
 tech: [Wordpress, PHP, CSS, RSS]
 images:
     -
-        uri: main
-        alt: Website on desktop
+        uri: website-home-light
+        alt: Home page on desktop
+        type: laptop
     -
-        uri: mobile
-        alt: Website on mobile
+        uri: site-episode-dark
+        alt: Episode page on mobile (dark mode)
+        type: mobile
+    -
+        uri: site-episode-light
+        alt: Episode page on mobile (light mode)
+        type: mobile
     -
         uri: spotify
         alt: Genre Therapy is distributed to all major podcast platforms
+        type: laptop
     -
         uri: logic-pro
         alt: Editing/Voiceover session in Logic Pro
+        type: laptop
 ---
 {% extends "layouts/project.njk" %}
 
@@ -30,7 +38,7 @@ images:
 {% block projectContent %}
     <div id="text-content">
         <h2>Problem</h2>
-        <p>Song Exploder hardly ever releases new episodes, and he mostly features top 40 musicians now.</p>
+        <p>Song Exploder mostly features top 40 musicians now.</p>
 
         <h2>Solution</h2>
         <div class="p">
