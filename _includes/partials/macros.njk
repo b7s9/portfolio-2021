@@ -1,6 +1,14 @@
 {% macro projectGallery(directory, fileList) %}
-    {% for image in fileList %}
-        <a @click="$dispatch('img-modal', {  imgModalSrc: '{{ directory }}/{{ image.uri }}.png', imgModalDesc: '{{ image.alt }}' })" class="cursor-pointer block mb-4">
-            <img src="{{ directory }}/{{ image.uri }}.png" alt="{{ image.alt }}" class="rounded-sm"></a>
-        {% endfor %}
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        {% for image in fileList %}
+            {% set gridWidth = "md:col-span-2" %}
+            {% set typeLocation = "laptop" %}
+            {% if image.type === "mobile" %}
+                {% set gridWidth = "md:col-span-1" %}
+                {% set typeLocation = "mobile" %}
+            {% endif %}
+            <a @click="$dispatch('img-modal', {  imgModalSrc: '{{ directory }}/{{ typeLocation }}/{{ image.uri }}@2x.png', imgModalDesc: '{{ image.alt }}' })" class="cursor-pointer block m-4 col-span-1 {{ gridWidth }}">
+                <img src="{{ directory }}/{{ typeLocation }}/{{ image.uri }}@2x.png" alt="{{ image.alt }}" class="rounded-sm"></a>
+            {% endfor %}
+        </div>
     {% endmacro %}
