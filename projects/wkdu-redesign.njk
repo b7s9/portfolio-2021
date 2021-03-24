@@ -2,12 +2,12 @@
 tags: project
 title: WKDU Site Redesign
 slug: wkdu-redesign
-description: Long term UX research and rebuilding of WKDU web properties from the ground up. Build in React. Pro-bono/personal project.
+description: Long term research and redesign of WKDU’s decade’s old website serving DJ’s, executive staff, and Philadelphia listeners. Built in React/Next.js with Tailwind. Personal/Pro-bono project.
 filters: [ux, ui, dev]
 status: pre-alpha
 client: WKDU
-tools: [Figma, Sketch]
-tech: [React, Rough.js]
+tools: [Figma, Sketch, Excalidraw, Gsuite]
+tech: [React, Rough.js, Next.js]
 images: 
     -
         uri: handdrawn-concept
@@ -42,6 +42,20 @@ images:
 
 {% block projectContent %}
     <div id="text-content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores eligendi accusantium error blanditiis? Tempore et voluptatum qui libero officiis earum, necessitatibus dolor dolorem provident cumque nulla odit quod cupiditate?</p>
+        <h2>Problem</h2>
+        <p>The current iteration of wkdu.org was built in the mid 2000’s and now runs on unsupported versions of Drupal and PHP. On top of this, the user experience is a royal pain for both public and internal usage. It is also riddled with hacks and bugs, and also aesthetically looks a little bit <em>too</em> “college radio”.</p>
+
+        <h2>Solution</h2>
+        <p>While I was station manager, Peter Liu (WKDU web admin) had expressed to me an interest in tackling the project, but only felt equipped to handle the data and coding side of the project. With my ability to lead the research and design aspects, in winter of 2020, Peter, Natalie Clark (Personnel director), and I finally dug into rebuilding this monolithic site.</p>
+
+        <h2>Research</h2>
+        <p>Most of my time on this project in early-mid 2020 was spent conducting contextual inquiry, interviews &amp; surveys about functionality and design of the existing WKDU website. By the end of the year, we compiled a spreadsheet of 113 features and fixes requested by participants. Each item contains notes, possible solutions, relevant components, relevant scope, relevant audience, and issue severity (ranging from “Scope creep” to “Blocks user goal completely”).</p>
+
+        <h2>Concept Design</h2>
+        <p>To gain a bit of momentum on the project I started with aesthetics, so I did a bit of additional research to gauge the most important design pillars, based on a scale of my own design. Essentially, users compare several concepts like “Organic” vs. “Synthetic” and “Experimental” vs. “Conventional” on a Likert scale. Then, they provided as much free-response as desired. In my insights presentation to the exec staff, I made sure to cherry pick lots of quotes from members, so everyone could feel part of the process.</p>
+        <p>I made three different aesthetic concepts for the project. One geometric, one organic/hand-drawn, and a throw-away modern <a href="https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6">Neuomorphic</a>. Based on the research data, I presented that the hand-drawn design concept would be preferable to the overall group, and most execs seemed fairly excited about it.</p>
+
+        <h2>User Interface &amp; MVP</h2>
+        <p>Currently the project is stuck in the minimum viable product phase while Peter and I have been busy with other projects. We’re in the process of hashing out some key components and rebuilding them in React. On the research side, I have a card sorting study I’d like to distribute soon, so we can get participant feedback about site navigation/functional grouping.</p>
     </div>
 {% endblock %}
