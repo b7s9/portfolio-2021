@@ -1,0 +1,35 @@
+---
+tags: project
+title: Icicle Dodging Simulator
+slug: icicle-game
+description: An HTML5 survival game. Built with Phaser.io. University Project.
+filters: [dev, audio]
+status: Complete
+client: Drexel University
+tools: [Sketch, Logic Pro]
+tech: [HTML, CSS, Vanilla JS, Phaser.io]
+images: 
+    - 
+        uri: mid-game
+        alt: Dodge as many icicles as you can in two minutes!
+        type: laptop
+    - 
+        uri: start-screen
+        alt: Use the left and right arrow keys to move
+        type: laptop
+    - 
+        uri: win-screen
+        alt: Screen shown if user is hit three times or less in two minutes
+        type: laptop
+    
+---
+{% extends "layouts/project.njk" %}
+
+{% block title %}{{title}}
+{% endblock %}
+
+{% block projectContent %}
+    <div id="text-content">
+        <p>I don't remember much about the development of this project, but it's cute and surprisingly fun. I remember making sprites and writing some scaling in JS to make the icicles fall at semi-random rates, and slightly increase gravity rate as the game progresses. Give it a whirl and see how many icicles you can dodge in two minutes. <a href="https://benschenerman.com/idm245/final" target="blank" rel="noopener noreferrer">Play Icicle Dodging Simulator</a>.</p>
+    </div>
+{% endblock %}

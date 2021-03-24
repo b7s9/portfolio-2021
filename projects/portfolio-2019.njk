@@ -1,0 +1,39 @@
+---
+tags: project
+title: Portfolio 2019
+slug: portfolio-2019
+description: Online portfolio using a custom Static Site Generator setup. Built with Nunjucks & Gulp. Personal Project.
+filters: [ui, dev]
+status: Complete
+client: Myself
+tools: [Sketch]
+tech: [Nunjucks, Gulp, Bootstrap]
+images: 
+    -
+        uri: home-page
+        alt: Live re-typing of my username into my full name
+        type: laptop 
+    - 
+        uri: project-page
+        alt: Mobile project page with screenshots and short descriptions
+        type: mobile
+    - 
+        uri: project-preview
+        alt: Mobile project page with screenshots and short descriptions
+        type: mobile
+    - 
+        uri: project-page
+        alt: Individual project page with screenshots and short descriptions
+        type: laptop   
+    
+---
+{% extends "layouts/project.njk" %}
+
+{% block title %}{{title}}
+{% endblock %}
+
+{% block projectContent %}
+    <div id="text-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores eligendi accusantium error blanditiis? Tempore et voluptatum qui libero officiis earum, necessitatibus dolor dolorem provident cumque nulla odit quod cupiditate?</p>
+    </div>
+{% endblock %}
