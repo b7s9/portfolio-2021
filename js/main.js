@@ -164,6 +164,6 @@ const filterButtons = document.querySelectorAll('.filters button');
 
 for (button of filterButtons) {
   button.addEventListener('click', e => {
-    updateFilterState(e.target)
+    updateFilterState(e.currentTarget)
   })
 }
