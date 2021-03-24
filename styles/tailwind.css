@@ -108,6 +108,10 @@
         @apply font-mono text-primary-700 dark:text-primary-300 rounded;
     }
 
+    #text-content a {
+        @apply font-bold text-primary-700 dark:text-primary-300 hover:underline;
+    }
+
     nav {
         @apply font-sans;
     }
