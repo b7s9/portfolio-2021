@@ -6,13 +6,9 @@ description: Online portfolio using a custom Static Site Generator setup. Built 
 filters: [ui, dev]
 status: Complete
 client: Myself
-tools: [Sketch]
+tools: [Sketch, Adobe Suite]
 tech: [Nunjucks, Gulp, Bootstrap]
 images: 
-    -
-        uri: home-page
-        alt: Live re-typing of my username into my full name
-        type: laptop 
     - 
         uri: project-page
         alt: Mobile project page with screenshots and short descriptions
@@ -25,6 +21,10 @@ images:
         uri: project-page
         alt: Individual project page with screenshots and short descriptions
         type: laptop   
+    -
+        uri: home-page
+        alt: Live re-typing of my username into my full name
+        type: laptop 
     
 ---
 {% extends "layouts/project.njk" %}
@@ -34,6 +34,8 @@ images:
 
 {% block projectContent %}
     <div id="text-content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores eligendi accusantium error blanditiis? Tempore et voluptatum qui libero officiis earum, necessitatibus dolor dolorem provident cumque nulla odit quod cupiditate?</p>
+        <p>My last portfolio iteration was more of a testament to the speed at which I could develop a website, as opposed to my design thinking. I spent considerably more energy on the 2021 portfolio to assure my personality comes through a bit clearer.</p>
+        <p>The 2019 portfolio was built with a custom Nunjucks/Javascript Static Site Generator (SSG). There was greater emphasis on optimized code, than presentation of the content. There was no flexibility in the portfolio pages, which was annoying when each project had a different makeup of mobile vs. desktop screenshots. I’ve also since become more invested in User Experience &amp; Research, so I wanted to make sure the current portfolio you’re viewing had a friendlier reading experience.
+</p>
     </div>
 {% endblock %}
