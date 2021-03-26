@@ -9,12 +9,6 @@
         {% if page.url == item.url %}
             {% set currentAttribute = ' aria-current="page"' %}
         {% endif %}
-        {# {% if item.email %}
-                    {% set emailId = 'id="email"' %}
-                {% endif %} #}
-        {# {% if item.email %}
-                        <input hidden="hidden" type="text" value="{{item.url}}" id="email-url">
-                    {% endif %} #}
         <a class="block md:inline-block py-2 rounded nav-item-color" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
             <i class="text-md mr-2 {{ item.icon }} fa-fw"></i>
             <span>{{ item.text }}</span>
