@@ -8,6 +8,7 @@ status: Season One complete
 client: WKDU, My Curiosity
 tools: [Logic Pro X, Ableton Live 10]
 tech: [Wordpress, PHP, CSS, RSS]
+link: https://genretherapy.org
 images:
     -
         uri: website-home-light
@@ -38,42 +39,27 @@ images:
 {% block projectContent %}
     <div id="text-content">
         <h2>Problem</h2>
-        <p>Song Exploder mostly features top 40 musicians now.</p>
+        <p>Interviewing people was one of my favorite parts about running my previous radio show on WKDU. I would call up independent artists all around the world and, using a semi-regular format, ask about their process and influence, etc. However, after a while I noticed that no one really wanted to listen to 40-50 minute interviews, so I looked for a more vibrant format.</p>
+        <p>I’m a big fan of the Song Exploder format, where listeners get to hear isolated tracks from the final song, and artists talk a bit about their process. Last autumn, I was feeling like Song Exploder wasn’t delivering enough episodes weird songs by indie musicians, so I found a niche to fill.</p>
 
         <h2>Solution</h2>
         <div class="p">
             <ol>
-                <li>Radio show on WKDU to tell the story of how an artist wrote and produced a song, and their growth as an artist over time</li>
-                <li>Website</li>
-                <li>Distributed podcast for asynchronous listening</li>
+                <li>Genre Therapy guests are either relatively unknown, or sort of looking into the Pop world from an interesting perspective.</li>
+                <li>Rather than just focusing on influences, songwriting, and production, Genre Therapy brings out more of an artist’s emotional relationships in the context of music, and considers their growth over time.</li>
+                <li>The editing style leans further into hyper-realism, such that the sounds you hear in Genre Therapy are not just explicitly created by the artists, but also contain sound design and compositional elements from me. I find this helps tell a richer story similar to episodes produced by Radiolab from WNYC.</li>
             </ol>
         </div>
 
-        <h2>Editing and Production</h2>
-        <p>Fans of Song Exploder will immediately recognize the influence for this show, and most likely enjoy the new direction. I’ve taken that format as a guide, and made some improvements in Genre Therapy
-        </p>
-
-        <div class="p">
-
-            <ol>
-                <li>Genre Therapy guests are either relatively unknown, or sort of looking into the Pop world from nearby.</li>
-                <li>Rather than just focusing on influences, songwriting, and production, Genre Therapy brings out more of an artist’s emotional relationships in the context of music, and considers their growth over time. I’ve brought in some of my own experiences with EFT to the interview process, which was the main inspiration behind the podcast title.</li>
-                <li>The editing style leans further into hyper-realism, such that the sounds you hear in Genre Therapy are not just explicitly created by the artists, but also contain sound design and compositional elements from me.</li>
-            </ol>
-        </div>
-
-        <h2>Marketing</h2>
-        <p>Since my friend was commissioning me to write a piece of music for one of her projects, I returned the favor by commissioing her to design the cover art, based on some mockups I provided. I took several screenshots within podcast apps to provide reference as to the different dimensions it would be rendered on Apple, Overcast, and Spotify. From there we determined minimum, maximum, and average viewing dimensions to be 90px, 630px, and 180px respectively. Since these are fairly small sizes, we opted for simple shapes, large typography, and eye-catching colors.</p>
+        <h2>Production</h2>
+        <p>I spent most of my 2020-2021 winter break scheduling, recording, and editing episodes for season one. I also setup the website and RSS feed. A week before each episode aired, I would listen back, record voiceover, finalize the mix, then create the social media poster. Episodes of Genre Therapy broadcast fortnightly on WKDU and are distributed to podcast platforms the next day.</p>
 
         <h2>Web Development</h2>
-        <p>Purchased domain and setup SSL with certbot command line interface. Wordpress droplet from DigitalOcean</p>
-        <p>Made a child theme of Wordpress Twenty-Twenty-One, but it doesn't respect the php
-            <code>wp_enque_stylesheet()</code>
-            function (you'd think Automattic would know better?) so I had to work around the theme by placing scripts and stylesheets inline in layout files rather than isolated template partials. It's janky, but it works. When I have time to come back to this I'll probably just make a new theme from scratch and save myself the headache.</p>
+        <p>As with most of my other projects, I purchased the domain and setup SSL using Certbot’s CLI on a Digital Ocean droplet. Since I get a decent amount of human and bot traffic on the site, I put the site on its own droplet. If it ever crashes, my portfolio and other side projects will still be accessible. I opted for Wordpress due to the speed of setup and content creation, then modified the default theme a bit. Trying to develop a child theme has been way more trouble than it’s worth, so in the future I might develop a theme from scratch.</p>        
 
         <h2>Podcast Distribution</h2>
         <p>I considered a few different 3rd party podcast distributors, but none of them offered the customization or media hosting that I was looking for at a reasonable price point. The exception was Anchor, which is quite comprehensive and completely free, but I refuse to use it on principle of the service being owned and operated by Spotify. Eventually I resolved to do the whole process manually.</p>
 
-        <p>Since I had already setup an object storage subscription for the Harry Potter Audiobook Player app, it didn’t cost me any more to use that to host audio for this podcast. It’s not as annoying as I thought it would be to maintain, but there's a huge margin for error if I don't triple check my XML before updating the feed. Another difference is I don’t get download stats for episodes. Based on my experience releasing music and anxiously watching stats, that’s probably for the best.</p>
+        <p>Since I had already setup an object storage subscription for the <a href="{{site.baseURL}}/projects/sleepy-potter">Harry Potter Audiobook Player</a>, it didn’t cost me any more to use that to host audio for this podcast. It’s not as annoying as I thought it would be to maintain, but there's a huge margin for error if I don't triple check my XML before updating the feed. Another difference is I don’t get download stats for episodes. Based on my experience releasing music and anxiously watching stats, that’s probably for the best.</p>
     </div>
 {% endblock %}

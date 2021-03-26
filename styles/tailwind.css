@@ -95,8 +95,16 @@
         margin-bottom: 1.25rem;
     }
 
-    ul, li {
+    ul, ol, li {
         @apply dark:leading-relaxed;
+    }
+
+    ol {
+        @apply list-decimal list-inside;
+    }
+
+    div.p ol li {
+        @apply mb-4;
     }
 
     small {
