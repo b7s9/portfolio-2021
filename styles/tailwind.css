@@ -117,7 +117,7 @@
     }
 
     #text-content a {
-        @apply font-bold text-primary-700 dark:text-primary-300 hover:underline;
+        @apply font-bold text-primary-700 dark:text-primary-300 underline hover:no-underline;
     }
 
     nav {
