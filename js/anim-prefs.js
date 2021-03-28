@@ -1,14 +1,14 @@
 const animTargets = document.getElementsByClassName('anim-target')
-const animToggles = document.getElementsByClassName('anim-toggle');
-let motionAllowed = true;
+const animToggles = document.getElementsByClassName('anim-toggle')
+let motionAllowed = true
 
 for (toggle of animToggles) {
-  toggle.addEventListener('click', e => {
+  toggle.addEventListener('click', (e) => {
     if (motionAllowed) {
-      motionAllowed = false;
+      motionAllowed = false
       pauseAnimations()
     } else {
-      motionAllowed = true;
+      motionAllowed = true
       startAnimations()
     }
   })
