@@ -1,44 +1,40 @@
-const htmlmin = require("html-minifier");
+const htmlmin = require('html-minifier')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.setUseGitIgnore(false)
 
-  eleventyConfig.addWatchTarget("./_tmp/style.css");
+  eleventyConfig.addWatchTarget('./_tmp/style.css')
 
-  eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
-
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/alpinejs/dist/alpine.js": "./js/lib/alpine.js",
-  });
+  eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' })
 
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/tinygesture/TinyGesture.js": "./js/lib/TinyGesture.js"
+    './node_modules/alpinejs/dist/alpine.js': './js/lib/alpine.js',
   })
 
-  eleventyConfig.addPassthroughCopy({ "assets/": "assets/" })
-  eleventyConfig.addPassthroughCopy({ "js/": "js/" })
-  eleventyConfig.addPassthroughCopy({ "favicon.ico/": "favicon.ico/" })
+  eleventyConfig.addPassthroughCopy({
+    './node_modules/tinygesture/TinyGesture.js': './js/lib/TinyGesture.js',
+  })
 
-  eleventyConfig.addShortcode("version", function () {
-    return String(Date.now());
-  });
+  eleventyConfig.addPassthroughCopy({ 'assets/': 'assets/' })
+  eleventyConfig.addPassthroughCopy({ 'js/': 'js/' })
+  eleventyConfig.addPassthroughCopy({ 'favicon.ico/': 'favicon.ico/' })
 
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (
-      process.env.ELEVENTY_PRODUCTION &&
-      outputPath &&
-      outputPath.endsWith(".html")
-    ) {
+  eleventyConfig.addShortcode('version', function () {
+    return String(Date.now())
+  })
+
+  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+    if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,
-      });
-      return minified;
+      })
+      return minified
     }
 
-    return content;
-  });
+    return content
+  })
 
   return {
     dir: {
@@ -46,4 +42,4 @@ module.exports = function (eleventyConfig) {
       output: '_site',
     },
   }
-};
+}

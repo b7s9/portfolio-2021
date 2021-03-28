@@ -22,8 +22,8 @@
         font-style: normal;
         font-weight: 100 900;
         font-display: block;
-        src: url("assets/fonts/Piazzolla[opsz,wght].woff2") format("woff2-variations"),
-            url("assets/fonts/Piazzolla[opsz,wght].woff2") format("woff2");
+        src: url('assets/fonts/Piazzolla[opsz,wght].woff2') format('woff2-variations'),
+            url('assets/fonts/Piazzolla[opsz,wght].woff2') format('woff2');
     }
 
     @font-face {
@@ -31,28 +31,25 @@
         font-style: italic;
         font-weight: 100 900;
         font-display: block;
-        src: url("assets/fonts/Piazzolla-Italic[opsz,wght].woff2") format("woff2-variations"),
-            url("assets/fonts/Piazzolla-Italic[opsz,wght].woff2") format("woff2");
+        src: url('assets/fonts/Piazzolla-Italic[opsz,wght].woff2') format('woff2-variations'),
+            url('assets/fonts/Piazzolla-Italic[opsz,wght].woff2') format('woff2');
     }
-    
+
     @font-face {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
-        src: local(''),
-            url('assets/fonts/inter-v3-latin-regular.woff2') format('woff2'),
+        src: local(''), url('assets/fonts/inter-v3-latin-regular.woff2') format('woff2'),
             url('assets/fonts/inter-v3-latin-regular.woff') format('woff');
     }
-  
+
     @font-face {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 600;
-        src: local(''),
-            url('assets/fonts/inter-v3-latin-600.woff2') format('woff2'),
+        src: local(''), url('assets/fonts/inter-v3-latin-600.woff2') format('woff2'),
             url('assets/fonts/inter-v3-latin-600.woff') format('woff');
     }
-
 
     body {
         @apply font-sans;
@@ -99,14 +96,17 @@
         font-weight: 800;
     }
 
-    p, div.p {
+    p,
+    div.p {
         font-size: 1.05rem;
         line-height: 1.4;
         @apply font-serif dark:leading-relaxed dark:text-gray-100;
         margin-bottom: 1.25rem;
     }
 
-    ul, ol, li {
+    ul,
+    ol,
+    li {
         @apply dark:leading-relaxed;
     }
 
@@ -158,10 +158,10 @@
     }
 
     .business div {
-        background-color: #779E6D;
+        background-color: #779e6d;
     }
     .chef div {
-        background-color: #DBD8D0;
+        background-color: #dbd8d0;
     }
 
     .hands img {

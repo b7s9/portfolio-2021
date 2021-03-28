@@ -1,24 +1,21 @@
-import TinyGesture from './lib/TinyGesture.js';
+import TinyGesture from './lib/TinyGesture.js'
 let textContent = b7s9.textContent
 let galleryContent = b7s9.galleryContent
 
 document.addEventListener('DOMContentLoaded', () => {
-
   if (textContent) {
+    const gesture = new TinyGesture(textContent)
 
-    const gesture = new TinyGesture(textContent);
-
-    gesture.on('swipeleft', event => {
+    gesture.on('swipeleft', (event) => {
       b7s9.showGallery()
-    });
+    })
   }
 
   if (galleryContent) {
-    const gesture = new TinyGesture(galleryContent);
+    const gesture = new TinyGesture(galleryContent)
 
-    gesture.on('swiperight', event => {
+    gesture.on('swiperight', (event) => {
       b7s9.showTextContent()
-    });
+    })
   }
-
 })

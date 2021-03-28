@@ -3,10 +3,10 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   darkMode: 'class',
   purge: {
-    content: ["_site/**/*.html", "_site/styles.css", "_site/js/*.js"],
+    content: ['_site/**/*.html', '_site/styles.css', '_site/js/*.js'],
     options: {
       safelist: {
-        standard: [/dark/]
+        standard: [/dark/],
       },
     },
   },
@@ -20,7 +20,7 @@ module.exports = {
         push: {
           '0%': { transform: 'translateY(1rem)' },
           '100%': { transform: 'translateY(-1rem)' },
-        }
+        },
       },
       animation: {
         spin: 'spin 4s linear infinite',
@@ -29,13 +29,17 @@ module.exports = {
         wiggleInverse: 'wiggle 5s ease-in-out alternate-reverse infinite',
         push: 'push 6s ease-in-out alternate infinite',
         pushAlt: 'push 4s ease-in-out alternate infinite',
-        pushInverse: 'push 5s ease-in-out alternate-reverse infinite'
+        pushInverse: 'push 5s ease-in-out alternate-reverse infinite',
       },
     },
     fontFamily: {
-      'sans': ['Inter, Overpass, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'],
-      'serif': ['Piazzolla, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'],
-      'mono': ['Menlo, ui-monospace, SFMono-Regular, Monaco, Consolas, "Ubuntu Mono", "Liberation Mono", "Courier New", monospace']
+      sans: [
+        'Inter, Overpass, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      ],
+      serif: ['Piazzolla, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'],
+      mono: [
+        'Menlo, ui-monospace, SFMono-Regular, Monaco, Consolas, "Ubuntu Mono", "Liberation Mono", "Courier New", monospace',
+      ],
     },
     colors: {
       transparent: 'transparent',
@@ -57,14 +61,14 @@ module.exports = {
         800: '#136739',
         900: '#16492D',
         light: '#85DDAC',
-        dark: '#136739'
-      }
+        dark: '#136739',
+      },
     },
   },
   variants: {
     animation: ['responsive', 'motion-safe', 'motion-reduce'],
     lineHeight: ['dark'],
-    fontSize: ['responsive', 'dark']
+    fontSize: ['responsive', 'dark'],
   },
   plugins: [],
-};
+}

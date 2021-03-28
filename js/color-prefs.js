@@ -3,11 +3,14 @@ const lsNamespace = 'b7s9portfolio2021'
 const colorSchemeName = lsNamespace + 'colorScheme'
 
 function isDarkMode() {
-  return localStorage.getItem(colorSchemeName) === 'dark' || (!(colorSchemeName in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  return (
+    localStorage.getItem(colorSchemeName) === 'dark' ||
+    (!(colorSchemeName in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  )
 }
 
 function getSystemTheme() {
-  let result;
+  let result
   if (localStorage.getItem(colorSchemeName) === 'dark') {
     result = 'dark'
   } else if (!(colorSchemeName in localStorage)) {
@@ -30,7 +33,6 @@ function applySystemTheme() {
   } else {
     document.documentElement.classList.remove('dark')
   }
-
 }
 applySystemTheme()
 
@@ -40,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const systemToggles = document.getElementsByClassName('system-toggle')
 
   for (toggle of darkToggles) {
-    toggle.addEventListener('click', e => {
+    toggle.addEventListener('click', (e) => {
       localStorage.setItem(colorSchemeName, 'dark')
       document.documentElement.classList.add('dark')
       updateIndicatorActive('dark')
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateIndicatorActive(initTheme)
   }
   for (toggle of lightToggles) {
-    toggle.addEventListener('click', e => {
+    toggle.addEventListener('click', (e) => {
       localStorage.setItem(colorSchemeName, 'light')
       document.documentElement.classList.remove('dark')
       updateIndicatorActive('light')
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateIndicatorActive(initTheme)
   }
   for (toggle of systemToggles) {
-    toggle.addEventListener('click', e => {
+    toggle.addEventListener('click', (e) => {
       localStorage.removeItem(colorSchemeName)
       applySystemTheme()
       updateIndicatorActive('system')
