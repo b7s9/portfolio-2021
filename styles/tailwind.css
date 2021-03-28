@@ -8,7 +8,7 @@
     }
 
     .filter-btn-active {
-        @apply border-primary-500 text-primary-dark dark:text-primary-light;
+        @apply border-primary-500 dark:border-primary-400 text-primary-dark dark:text-primary-light font-semibold;
     }
 
     .indicator-active {
@@ -34,14 +34,25 @@
         src: url("assets/fonts/Piazzolla-Italic[opsz,wght].woff2") format("woff2-variations"),
             url("assets/fonts/Piazzolla-Italic[opsz,wght].woff2") format("woff2");
     }
-
+    
     @font-face {
-        font-family: "Overpass";
+        font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
-        src: url("assets/fonts/overpass-v5-latin-regular.woff2") format("woff2"),
-            url("assets/fonts/overpass-v5-latin-regular.woff") format("woff");
+        src: local(''),
+            url('assets/fonts/inter-v3-latin-regular.woff2') format('woff2'),
+            url('assets/fonts/inter-v3-latin-regular.woff') format('woff');
     }
+  
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        src: local(''),
+            url('assets/fonts/inter-v3-latin-600.woff2') format('woff2'),
+            url('assets/fonts/inter-v3-latin-600.woff') format('woff');
+    }
+
 
     body {
         @apply font-sans;
@@ -70,7 +81,7 @@
 
     h2 {
         font-size: 2.44rem;
-        font-weight: 300;
+        font-weight: 600;
     }
 
     h3 {
@@ -157,13 +168,4 @@
         @apply inline-block h-56 sm:h-64 md:h-96 transform -rotate-90 translate-x-14;
         /* max-width: 25%; */
     }
-    /* .hands img:nth-child(1){
-        @apply animate-push lg:h-44;
-    }
-    .hands img:nth-child(2){
-        @apply animate-pushAlt lg:h-64;
-    }
-    .hands img:nth-child(3){
-        @apply animate-pushInverse lg:h-56;
-    } */
 }
