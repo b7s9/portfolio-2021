@@ -1,6 +1,6 @@
 const site = {
-  title: 'Ben Schenerman',
-  description: "Ben Schenerman's Portfolio",
+  title: 'b7s9 | Ben Schenerman',
+  description: "Ben Schenerman is a UX researcher, UI designer, Front-end developer, & Audio engineer.",
 }
 
 module.exports = function () {

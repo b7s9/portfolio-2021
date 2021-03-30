@@ -1,6 +1,13 @@
 {% extends "layouts/default.njk" %}
-{% block title %}b7s9 | Ben Schenerman
-{% endblock %}
+{% from "partials/macros.njk" import siteDescription, canonicalUrl %}
+
+{% block metatags %}
+{{siteDescription(site.title + ": " + site.description)}}
+{{canonicalUrl(site.baseURL, page.url)}}
+{% endblock %}  
+
+{% block title %}b7s9 | Ben Schenerman{% endblock %}
+
 {% block content %}
     <div class="hidden lg:block lg:col-start-1 lg:col-span-3 xl:col-start-2 xl:col-span-2">
         <div class="business relative block mx-auto h-64 w-64  my-12">

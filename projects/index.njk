@@ -1,6 +1,13 @@
 {% extends "layouts/default.njk" %}
-{% block title %}b7s9 | Ben Schenerman
-{% endblock %}
+{% from "partials/macros.njk" import projectGallery, siteDescription, canonicalUrl %}
+
+{% block metatags %}
+{{siteDescription(site.title + ": " + site.description)}}
+{{canonicalUrl(site.baseURL, page.url)}}
+{% endblock %}  
+
+{% block title %}b7s9 | Ben Schenerman{% endblock %}
+
 {% block content %}
     <aside class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
         <div class="lg:fixed">

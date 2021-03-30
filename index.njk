@@ -2,6 +2,12 @@
 images: [left-hand, middle-hand, right-hand]
 ---
 {% extends "layouts/default.njk" %}
+{% from "partials/macros.njk" import siteDescription, canonicalUrl %}
+
+{% block metatags %}
+{{siteDescription(site.title + ": " + site.description)}}
+{{canonicalUrl(site.baseURL, page.url)}}
+{% endblock %}  
 
 {% block title %}b7s9 | Ben Schenerman{% endblock %}
 

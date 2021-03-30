@@ -8,7 +8,18 @@
                 {% set typeLocation = "mobile" %}
             {% endif %}
             <a @click="$dispatch('img-modal', {  imgModalSrc: '{{ directory }}/{{ typeLocation }}/{{ image.uri }}@2x.png', imgModalDesc: '{{ image.alt }}' })" class="cursor-pointer block m-4 col-span-1 {{ gridWidth }}">
-                <img src="{{ directory }}/{{ typeLocation }}/{{ image.uri }}@2x.png" alt="{{ image.alt }}" class="rounded-sm"></a>
-            {% endfor %}
-        </div>
-    {% endmacro %}
+            <img src="{{ directory }}/{{ typeLocation }}/{{ image.uri }}@2x.png" alt="{{ image.alt }}" class="rounded-sm"></a>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% macro siteDescription(description) %}
+<meta name="og:description" content="{{ description }}"/>
+<meta name="description" content="{{ description }}"/>
+<meta name="twitter:description" content="{{ description }}"/>
+{% endmacro %}
+
+{% macro canonicalUrl(baseURL, slug) %}
+<meta name="og:url" content="{{ baseURL }}{{ slug }}"/>
+<meta name="twitter:url" content="{{ baseURL }}{{ slug }}"/>
+{% endmacro %}

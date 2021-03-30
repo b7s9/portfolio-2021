@@ -1,6 +1,13 @@
 {% extends "layouts/default.njk" %}
-{% from "partials/macros.njk" import projectGallery %}
+{% from "partials/macros.njk" import projectGallery, siteDescription, canonicalUrl  %}
+
+{% block metatags %}
+{{siteDescription(title + ": " + description)}}
+{{canonicalUrl(site.baseURL, page.url)}}
+{% endblock %}  
+
 {{ title }}
+
 {% block content %}
     <div x-data="{ imgModal : false, imgModalSrc : '', imgModalDesc : '' }">
         <template @img-modal.window="imgModal = true; imgModalSrc = $event.detail.imgModalSrc; imgModalDesc = $event.detail.imgModalDesc;" x-if="imgModal">
