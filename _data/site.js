@@ -1,5 +1,5 @@
 const site = {
-  title: 'b7s9 | Ben Schenerman',
+  title: 'b7s9',
   description: "Ben Schenerman is a UX researcher, UI designer, Front-end developer, & Audio engineer.",
 }
 
