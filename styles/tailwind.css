@@ -164,7 +164,11 @@
     }
 
     .nav-item-color {
-        @apply text-gray-800 dark:text-gray-300 hover:text-primary-dark dark:hover:text-primary-light;
+        @apply text-gray-800 dark:text-gray-300 hover:text-primary-dark dark:hover:text-primary-light focus:border-b-2 border-primary-600;
+    }
+
+    .nav-button {
+        @apply py-2 font-sans cursor-pointer rounded;
     }
 
     .business div {

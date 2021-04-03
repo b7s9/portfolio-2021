@@ -9,7 +9,7 @@
         {% if page.url == item.url %}
             {% set currentAttribute = ' aria-current="page"' %}
         {% endif %}
-        <a class="block md:inline-block py-2 rounded nav-item-color" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
+        <a class="block md:inline-block py-2 rounded nav-item-color" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }} tabindex="1">
             <i class="text-md mr-2 {{ item.icon }} fa-fw"></i>
             <span>{{ item.text }}</span>
         </a>

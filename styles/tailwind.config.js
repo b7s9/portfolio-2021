@@ -69,7 +69,8 @@ module.exports = {
     animation: ['responsive', 'motion-safe', 'motion-reduce'],
     lineHeight: ['dark'],
     fontSize: ['responsive', 'dark'],
-    ringWidth: ['hover', 'active']
+    ringWidth: ['hover', 'active'],
+    borderWidth: ['focus']
   },
   plugins: [],
 }

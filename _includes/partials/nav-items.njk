@@ -8,7 +8,7 @@
         {% if page.url == item.url %}
             {% set currentAttribute = ' aria-current="page"' %}
         {% endif %}
-        <a class="inline-block py-2 rounded nav-item-color" href="{{ site.baseURL }}{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }}>
+        <a class="inline-block py-2 rounded nav-item-color" href="{{ site.baseURL }}{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }} tabindex="1">
             {{ item.text }}
         </a>
     {% endfor %}
