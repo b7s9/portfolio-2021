@@ -2,12 +2,12 @@
   "items": [
     {
       "text": "Projects",
-      "url": "/projects",
+      "url": "/projects/",
       "external": false
     },
     {
       "text": "About",
-      "url": "/about",
+      "url": "/about/",
       "external": false
     }
   ],

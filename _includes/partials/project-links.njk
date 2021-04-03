@@ -2,7 +2,11 @@
 <h4 class="mb-2">More Projects</h4>
 <div class="mb-8 space-y-3 font-sans text-xl">
     {%- for project in collections.project -%}
-        <a href="{{ site.baseURL }}{{ project.url }}" class="inline-block mr-2 text-gray-700 dark:text-gray-300 hover:underline">{{ project.data.title }}</a>
+        {% set currentLink = "" %}
+        {% if project.url === page.url %}
+            {% set currentLink = "aria-current='page'" %}
+        {% endif %}
+        <a href="{{ site.baseURL }}{{ project.url }}" class="inline-block mr-2 text-gray-700 dark:text-gray-300 hover:underline hover:text-primary-700 dark:hover:text-primary-300" {{currentLink}}>{{ project.data.title }}</a>
         <span class="mr-3 text-gray-400 dark:text-gray-500">•</span>
     {%- endfor -%}
 </div>
