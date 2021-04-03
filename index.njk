@@ -24,7 +24,7 @@ images: [left-hand, middle-hand, right-hand]
             {% include "partials/home-social.njk" %}
         </div>        
         <div class="hidden lg:block mt-4 md:mt-12 lg:mt-24 mb-12 mx-auto">
-            <button class="aphorism mb-2 py-2 px-4 font-sans font-semibold rounded-lg bg-primary-700 hover:bg-primary-800 text-gray-100"></button>
+            <button class="aphorism mb-2 py-2 px-4 font-sans font-semibold rounded-lg bg-primary-800 hover:bg-primary-900 text-gray-100"></button>
             <p class="text-gray-500 dark:text-gray-400"><em>(Click for another)</em></p>
         </div>
     </main>
@@ -42,27 +42,38 @@ images: [left-hand, middle-hand, right-hand]
     </div> 
 
     <div class="col-start-1 col-span-6 sm:col-start-2 sm:col-span-4 lg:hidden mt-4 md:mt-12 lg:mt-24 mb-12 mx-auto">
-        <button class="aphorism mb-2 py-2 px-4 font-sans font-semibold rounded-lg bg-primary-700 hover:bg-primary-800 text-gray-100"></button>
+        <button class="aphorism mb-2 py-2 px-4 font-sans font-semibold rounded-lg bg-primary-800 hover:bg-primary-900 text-gray-100"></button>
         <p class="text-gray-500 dark:text-gray-400"><em>(Click for another)</em></p>
     </div>
 
     <script> 
-    /*"Projects are never complete, only abandoned.",
-    "Design is emotional.",
-    "Design is goal-oriented.",
-    "The universe is infinite. Human knowledge is not.",
-    "Bi-directional links promote lateral power distribution.",
-    "Poorly designed research is worse than no research at all.",
-    "Emotion is the sum of environmental influence.",
-    "Personality is the sum of relationships. Relationships are the result of systems.",
-    "Rules are imaginary, consequences are not.",
-    "Content moderation is a climate change issue.",
-    "Language evolves over time.",*/
-    const aphorisms = [    
-    "Design is manipulative. It's not inherently immoral.",
-    "Understanding cognitive bias does not make you immune to its effects.",
-    "Spaced repetition is the most underrated design principle.",
-    "What would happen if more websites implemented bi-directional links?"
+        const aphorisms = [    
+        "Made by b7s9.",
+        "b7s9 for all.",
+        "b7s9 moments.",
+        "b7s9 is what the world was waiting for.",
+        "b7s9 - play it!",
+        "When you say b7s9 you've said it all.",
+        "I trust b7s9.",
+        "b7s9, your specialist.",
+        "Nothing is better than b7s9.",
+        "b7s9, love it or leave it.",
+        "Are you ready for b7s9?",
+        "I wish I had a b7s9.",
+        "There's lots of fun with b7s9.",
+        "Follow your b7s9",  
+        "b7s9, a love language for all.",  
+        "I want b7s9 and I want it now.",
+        "The b7s9 community.",
+        "b7s9 on the outside, tasty on the inside.",
+        "b7s9 makes your day.",
+        "Truly b7s9.",
+        "Where's your b7s9?",
+        "Think different, think b7s9.",
+        "b7s9 for your life.",
+        "What is b7s9?",
+        "Who wouldn't fight for b7s9?",
+        "Stay cool with b7s9.",
     ];
 
     document.addEventListener('DOMContentLoaded', e=>{
@@ -89,12 +100,21 @@ images: [left-hand, middle-hand, right-hand]
                 message = newMessage;
             }
         }
+ 
+        // getSlogan()
+
+        // function getSlogan(){
+        //    fetch('http://www.sloganizer.net/en/outbound.php?slogan=b7s9', {mode:'no-cors', method:'get'})
+        //        .then(response => console.log(response))
+        //        .then(data => console.log(data));
+        //}
     })
 
     function getRandomItem (items) {
         let selected = items[Math.floor(Math.random() * items.length)];
         return selected;
     }
+
     </script>
 
 {% endblock %}
