@@ -7,6 +7,6 @@
             {% set currentLink = "aria-current='page'" %}
         {% endif %}
         <a href="{{ site.baseURL }}{{ project.url }}" class="inline-block mr-2 text-gray-700 dark:text-gray-300 hover:underline hover:text-primary-700 dark:hover:text-primary-300" {{currentLink}}>{{ project.data.title }}</a>
-        <span class="mr-3 text-gray-400 dark:text-gray-500">•</span>
+        <span class="mr-3 text-gray-400 dark:text-gray-500" aria-hidden="true">•</span>
     {%- endfor -%}
 </div>
