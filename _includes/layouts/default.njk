@@ -34,7 +34,8 @@
         <script src="{{ site.baseURL }}/js/color-prefs.js?v={% version %}"></script>
     </head>
     <body class="bg-gray-50 dark:bg-gray-800 min-h-screen">
-        {% include '../partials/nav.njk' %}
+        {% block navigation %}{% endblock %}
+        <noscript>Enable JavaScript for the full experience.</noscript>
         <div x-data="{ ux: true, ui: true, dev: true, audio: true }" class="p-4 lg:px-9 pb-9 grid grid-cols-6 gap-x-4 lg:grid-cols-12 lg:gap-x-9">
             {% block content %}
                 {{ content | safe }}
