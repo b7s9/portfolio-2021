@@ -12,19 +12,89 @@ images: [left-hand, middle-hand, right-hand]
 {% block title %}b7s9 | Ben Schenerman{% endblock %}
 
 {% block content %}
-    <main class="col-start-1 col-span-6 lg:col-start-4 lg:col-span-6">
-        {# <div class="inline-block">
-            {% include 'partials/nav-social.njk'%}
-        </div> #}
-        <div class="index-title md:mt-12">
-            <a href="{{ site.baseURL }}/projects/" class="title-primary my-4 text-7xl font-bold md:text-8xl lg:text-9xl">Design &amp; Audio</a>
-            <a href="{{ site.baseURL }}/about/" class="title-secondary my-12 text-5xl md:text-6xl lg:text-7xl ">Ben Schenerman (b7s9)</a>
-        </div>
 
+<div class="fixed top-0 right-0 mt-2 mr-2">
+    {% include "partials/home-prefs.njk" %}
+</div>
 
-
-        <div class="hands absolute top-2/3 sm:top-1/2 right-0 origin-center overflow-hidden">
-            <img src="{{ site.baseURL }}/assets/images/hands/all-hands.png" alt="all hands" class="anim-target">            
+    <main class="index-title col-start-1 col-span-6 lg:col-start-2 lg:col-span-3 md:mt-12 lg:mt-24 sm:mx-auto">
+        <a href="{{ site.baseURL }}/projects/" class="title-primary my-4 text-2xl md:text-3xl lg:text-4xl font-bold">Design &amp; Audio</a>
+        <a href="{{ site.baseURL }}/about/" class="title-secondary my-2 text-xl md:text-xl lg:text-xl ">Ben Schenerman (b7s9)</a>
+        <div class="flex">
+            {% include "partials/home-social.njk" %}
+        </div>        
+        <div class="hidden lg:block mt-4 md:mt-12 lg:mt-24 mb-12 mx-auto">
+            <button class="aphorism mb-2 py-2 px-4 font-sans font-semibold rounded-lg bg-primary-700 hover:bg-primary-600 text-gray-100"></button>
+            <p class="text-gray-500 dark:text-gray-400"><em>(Click for another)</em></p>
         </div>
     </main>
+
+    <div class="hero-previews col-start-1 col-span-6 sm:col-start-2 sm:col-span-4 lg:col-start-6 lg:col-span-6 mt-6 md:mt-8 space-y-4 md:space-y-8">
+        <a href="{{ site.baseURL }}/projects/sleepy-potter" class="block">           
+            <img src="{{site.baseURL}}/assets/images/home/sleepy-potter-half-moon.jpg" alt="Harry Potter Sleepytime Player project preview">
+        </a>
+        <a href="{{ site.baseURL }}/projects/genre-therapy" class="block">
+            {# <picture>
+                <source media="(min-width: 1024px)" srcset="{{site.baseURL}}/assets/images/sleepy-potter-half-moon.jpg">
+            </picture> #}
+            <img src="{{site.baseURL}}/assets/images/home/genre-therapy-half-moon.jpg" alt="Genre Therapy project preview">
+        </a>
+    </div> 
+
+    <div class="col-start-1 col-span-6 sm:col-start-2 sm:col-span-4 lg:hidden mt-4 md:mt-12 lg:mt-24 mb-12 mx-auto">
+        <button class="aphorism mb-2 py-2 px-4 font-sans font-semibold rounded-lg bg-primary-700 hover:bg-primary-600 text-gray-100"></button>
+        <p class="text-gray-500 dark:text-gray-400"><em>(Click for another)</em></p>
+    </div>
+
+    <script> 
+    /*"Projects are never complete, only abandoned.",
+    "Design is emotional.",
+    "Design is goal-oriented.",
+    "The universe is infinite. Human knowledge is not.",
+    "Bi-directional links promote lateral power distribution.",
+    "Poorly designed research is worse than no research at all.",
+    "Emotion is the sum of environmental influence.",
+    "Personality is the sum of relationships. Relationships are the result of systems.",
+    "Rules are imaginary, consequences are not.",
+    "Content moderation is a climate change issue.",
+    "Language evolves over time.",*/
+    const aphorisms = [    
+    "Design is manipulative. It's not inherently immoral.",
+    "Understanding cognitive bias does not make you immune to its effects.",
+    "Spaced repetition is the most underrated design principle.",
+    "What would happen if more websites implemented bi-directional links?"
+    ];
+
+    document.addEventListener('DOMContentLoaded', e=>{
+        const displayTargets = document.getElementsByClassName('aphorism');
+        const refreshBtns = document.getElementsByClassName('aphorism');
+        let message = '';
+
+        getAphorism();
+
+		for(button of refreshBtns){
+			button.addEventListener('click', ()=>{
+				getAphorism()
+			})
+		}
+
+        function getAphorism(){
+            let newMessage = getRandomItem(aphorisms);
+            if(message === newMessage){
+                getAphorism()
+            }else{
+				for(target of displayTargets){
+					target.innerText = newMessage;
+				}
+                message = newMessage;
+            }
+        }
+    })
+
+    function getRandomItem (items) {
+        let selected = items[Math.floor(Math.random() * items.length)];
+        return selected;
+    }
+    </script>
+
 {% endblock %}

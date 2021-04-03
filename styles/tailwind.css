@@ -79,6 +79,11 @@
     h2 {
         font-size: 2.44rem;
         font-weight: 600;
+        line-height: 1.2;
+    }
+
+    #text-content h2 {
+        margin-bottom: 1rem;
     }
 
     h3 {
@@ -136,8 +141,12 @@
         @apply font-sans;
     }
 
+    .hero-previews a {
+        @apply block transition-shadow duration-300 hover:ring-4 active:ring-4 ring-primary-700;
+    }
+
     .index-title a {
-        @apply block break-words font-serif hover:underline;
+        @apply block break-words font-serif underline hover:no-underline;
     }
 
     .title-secondary {
