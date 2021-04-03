@@ -127,7 +127,8 @@
         @apply font-mono text-primary-700 dark:text-primary-300 rounded;
     }
 
-    #text-content a {
+    #text-content a,
+    .link {
         @apply font-bold text-primary-700 dark:text-primary-300 underline hover:no-underline;
     }
 
