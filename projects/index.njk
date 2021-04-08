@@ -30,7 +30,7 @@
     </aside>
     <main class="lg:mt-12 col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
         <ul>
-            {%- for project in collections.project -%}
+            {%- for project in collections.project | reverse -%}
                 <li data-filters="{{ project.data.filters }}" class="project-preview mb-12">
                     <h2 class="text-4xl font-extrabold title-primary underline hover:no-underline">
                         <a href="{{ site.baseURL }}{{ project.url }}">{{ project.data.title }}</a>
