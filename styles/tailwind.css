@@ -14,6 +14,18 @@
     .indicator-active {
         @apply text-primary-dark dark:text-primary-light;
     }
+
+    .indicator-active p {
+        @apply text-primary-dark dark:text-primary-light;
+    }
+
+    .content-pref-active {
+        @apply text-primary-400;
+    }
+
+    .content-pref-active p {
+        @apply text-primary-400 underline;
+    }
 }
 
 @layer base {

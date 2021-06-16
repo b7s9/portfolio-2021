@@ -36,6 +36,7 @@
     <body class="bg-gray-50 dark:bg-gray-800 min-h-screen">
         {% block navigation %}{% endblock %}
         <noscript>Enable JavaScript for the full experience.</noscript>
+        {% include 'partials/content-prefs.njk' %}
         <div x-data="{ ux: true, ui: true, dev: true, audio: true }" class="p-4 lg:px-9 pb-9 grid grid-cols-6 gap-x-4 lg:grid-cols-12 lg:gap-x-9">
             {% block content %}
                 {{ content | safe }}
