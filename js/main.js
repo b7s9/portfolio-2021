@@ -6,6 +6,8 @@ b7s9 = {
   galleryContent: document.getElementById('gallery-content'),
   textIndicator: document.getElementById('text-indicator'),
   galleryIndicator: document.getElementById('gallery-indicator'),
+  lsNamespace: 'b7s9portfolio2021',
+  prefersGalleryFirst: 'b7s9portfolio2021' + 'prefersGalleryFirst',
   textContentActive: true,
   showTextContent: function () {
     this.textContent.hidden = false
@@ -28,6 +30,64 @@ b7s9 = {
       this.galleryIndicator.classList.add('indicator-active')
     }
   },
+  showContentPrefs: function () {
+    const prefersGalleryFirst = this.prefersGalleryFirst;
+    const modal = document.getElementById('content-prefs')
+    const closeBtn = document.getElementById('tutorial-close-btn')
+    const prefersStoryBtn = document.getElementById('prefers-story-btn')
+    const prefersGalleryBtn = document.getElementById('prefers-gallery-btn')
+
+    function updateContentPrefsDisplay() {
+      if (localStorage.getItem(prefersGalleryFirst) == 1) { // pref gallery first
+        prefersGalleryBtn.classList.add('content-pref-active')
+        prefersStoryBtn.classList.remove('content-pref-active')
+        document.getElementById('gallery-content') && b7s9.showGallery()
+      } else { // pref story first
+        prefersGalleryBtn.classList.remove('content-pref-active')
+        prefersStoryBtn.classList.add('content-pref-active')
+        document.getElementById('gallery-content') && b7s9.showTextContent()
+      }
+      updateContentPrefsIcon(contentPrefsToggles)
+    }
+
+    function updateContentPrefs(e) {
+      localStorage.setItem(prefersGalleryFirst, e.currentTarget.value)
+      updateContentPrefsDisplay()
+    }
+
+    modal.classList.remove('hidden')
+
+    updateContentPrefsDisplay()
+
+    prefersStoryBtn.addEventListener('click', updateContentPrefs)
+    prefersGalleryBtn.addEventListener('click', updateContentPrefs)
+
+    closeBtn.addEventListener('click', () => {
+
+      modal.classList.add('hidden')
+    })
+  }
+}
+
+const contentPrefsToggles = document.getElementsByClassName('content-prefs-toggle')
+updateContentPrefsIcon(contentPrefsToggles)
+
+for (toggle of contentPrefsToggles) {
+  toggle.addEventListener('click', (e) => {
+    b7s9.showContentPrefs();
+  })
+}
+
+function updateContentPrefsIcon(icons) {
+  for (toggle of icons) {
+    if (localStorage.getItem(b7s9.prefersGalleryFirst) == 1) {
+      toggle.children[0].classList.remove('fa-font')
+      toggle.children[0].classList.add('fa-images')
+    } else {
+      toggle.children[0].classList.add('fa-font')
+      toggle.children[0].classList.remove('fa-images')
+    }
+  }
 }
 
 let textIndicator = b7s9.textIndicator
