@@ -1,6 +1,5 @@
 // On page load or when changing themes, best to add inline in `head` to avoid Flash Of Unstyled Content (FOUC)
-const lsNamespace = 'b7s9portfolio2021'
-const colorSchemeName = lsNamespace + 'colorScheme'
+const colorSchemeName = 'b7s9portfolio2021' + 'colorScheme'
 
 function isDarkMode() {
   return (
