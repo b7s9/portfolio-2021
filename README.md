@@ -25,14 +25,6 @@ This changes the baseURL to remote, and optimizes a few things. The resulting `_
 npm run build
 ```
 
-### Stage build
-
-This is a copy of the production script but prepares the baseURL for staging on a private subdomain for testing. 
-
-```
-npm run stage
-```
-
 ## Credits
 
 Template and [article](https://css-tricks.com/eleventy-starter-with-tailwind-css-alpine-js/) by [Greg Wolanski](https://gregwolanski.com)
