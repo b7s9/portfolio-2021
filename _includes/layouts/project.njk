@@ -12,96 +12,76 @@
     {% include 'partials/nav.njk' %}
 {% endblock %}
 
-{% block content %}
-    <div x-data="{ imgModal : false, imgModalSrc : '', imgModalDesc : '' }">
-        <template @img-modal.window="imgModal = true; imgModalSrc = $event.detail.imgModalSrc; imgModalDesc = $event.detail.imgModalDesc;" x-if="imgModal">
-            <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-90" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-90" x-on:click.away="imgModalSrc = ''" class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center bg-black bg-opacity-75">
-                <div @click.away="imgModal = ''" class="flex flex-col max-h-full overflow-auto">
-                    <div class="z-50">
-                        <button @click="imgModal = ''" class="float-right pt-2 pr-2 outline-none focus:outline-none">
-                            <svg class="fill-current text-white " xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 18 18">
-                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="p-2">
-                        <img :alt="imgModalSrc" class="object-contain w-100-screen mx-auto" :src="imgModalSrc">
-                            <p x-text="imgModalDesc" class="text-center text-white mt-2"></p>
-                        </div>
-                    </div>
-                </div>
-            </template>
+{% block content %}     
+    <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
+        <header class="lg:mt-12">
+            <h1 class="text-4xl title-primary">{{ title }}</h1>
+            <p class="project-tags mt-2">
+                <span class="block font-sans text-lg font-semibold mb-3">
+                    {% for f in filters %}
+                        <span>{{ filterNames[f].name }}</span>,
+                    {% endfor %}
+                </span>
+                <span class="block mb-1">
+                    <strong>Client:</strong>
+                    {{ client }}
+                </span>
+                <span class="block mb-1">
+                    <strong>Project Status:</strong>
+                    {{ status }}
+                </span>
+                <span class="block mb-1">
+                    <strong>Tools:</strong>
+                    {% for tool in tools %}
+                        <span>{{ tool }}</span>,
+                    {% endfor %}
+                </span>
+                <span class="block mb-1">
+                    <strong>Tech:</strong>
+                    {% for techie in tech %}
+                        <span>{{ techie }}</span>,
+                    {% endfor %}
+                </span>
+                {% if link %}
+                    <span class="block mb-1">
+                        <strong>Link:</strong>
+                        <a href="{{ link }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 dark:text-primary-light underline hover:no-underline">{{ link }}</a>
+                    </span>
+                {% endif %}
+            </p>
+        </header>
+        {% block projectContent %}
+            {{ projectContent | safe }}
+        {% endblock %}
+        {% set directory = site.baseURL + "/assets/project-galleries/" + slug %}
+        <div id="gallery-content" hidden="hidden" x-data="{}">
+            {{ projectGallery( directory, images ) }}
         </div>
         
-        <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
-            <header class="lg:mt-12">
-                <h1 class="text-4xl title-primary">{{ title }}</h1>
-                <p class="project-tags mt-2">
-                    <span class="block font-sans text-lg font-semibold mb-3">
-                        {% for f in filters %}
-                            <span>{{ filterNames[f].name }}</span>,
-                        {% endfor %}
-                    </span>
-                    <span class="block mb-1">
-                        <strong>Client:</strong>
-                        {{ client }}
-                    </span>
-                    <span class="block mb-1">
-                        <strong>Project Status:</strong>
-                        {{ status }}
-                    </span>
-                    <span class="block mb-1">
-                        <strong>Tools:</strong>
-                        {% for tool in tools %}
-                            <span>{{ tool }}</span>,
-                        {% endfor %}
-                    </span>
-                    <span class="block mb-1">
-                        <strong>Tech:</strong>
-                        {% for techie in tech %}
-                            <span>{{ techie }}</span>,
-                        {% endfor %}
-                    </span>
-                    {% if link %}
-                        <span class="block mb-1">
-                            <strong>Link:</strong>
-                            <a href="{{ link }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 dark:text-primary-light underline hover:no-underline">{{ link }}</a>
-                        </span>
-                    {% endif %}
-                </p>
-            </header>
-            {% block projectContent %}
-                {{ projectContent | safe }}
-            {% endblock %}
-            {% set directory = site.baseURL + "/assets/project-galleries/" + slug %}
-            <div id="gallery-content" hidden="hidden" x-data="{}">
-                {{ projectGallery( directory, images ) }}
-            </div>
-            
-        </main>        
-        <div class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
-            <div class="flex justify-center align-middle space-x-12 mt-8 lg:mt-0 pb-4 lg:fixed lg:inline-block lg:space-x-0 lg:top-1/3 lg:space-y-8 text-gray-800 dark:text-gray-300">
-                <button id="text-indicator" class="hover:text-gray-600">
-                    <div class="flex items-center">
-                        <i class="fas fa-arrow-left mx-4 text-lg text-gray-400 dark:text-gray-600" aria-hidden="true"></i>
-                        <i class="fas fa-font cursor-pointer text-3xl lg:text-6xl"></i>
-                    </div>
-                    <p class="font-sans text-right md:text-lg">Story</p>
-                </button>
-                <br>
-                <button id="gallery-indicator" class="hover:text-gray-600">
-                    <div class="flex items-center">
-                        <i class="fas fa-images cursor-pointer text-3xl lg:text-6xl"></i>
-                        <i class="fas fa-arrow-right mx-4 text-lg text-gray-400 dark:text-gray-600" aria-hidden="true"></i>
-                    </div>
-                    <p class="font-sans text-left md:text-lg">Images</p>                    
-                </button>
-                <br>
-                <p class="hidden lg:inline-block w-1/3 font-sans text-sm">Left and right arrow keys switch content type</p>
-            </div>
+    </main>        
+    <div class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
+        <div class="flex justify-center align-middle space-x-12 mt-8 lg:mt-0 pb-4 lg:fixed lg:inline-block lg:space-x-0 lg:top-1/3 lg:space-y-8 text-gray-800 dark:text-gray-300">
+            <button id="text-indicator" class="hover:text-gray-600">
+                <div class="flex items-center">
+                    <i class="fas fa-arrow-left mx-4 text-lg text-gray-400 dark:text-gray-600" aria-hidden="true"></i>
+                    <i class="fas fa-font cursor-pointer text-3xl lg:text-6xl"></i>
+                </div>
+                <p class="font-sans text-right md:text-lg">Story</p>
+            </button>
+            <br>
+            <button id="gallery-indicator" class="hover:text-gray-600">
+                <div class="flex items-center">
+                    <i class="fas fa-images cursor-pointer text-3xl lg:text-6xl"></i>
+                    <i class="fas fa-arrow-right mx-4 text-lg text-gray-400 dark:text-gray-600" aria-hidden="true"></i>
+                </div>
+                <p class="font-sans text-left md:text-lg">Images</p>                    
+            </button>
+            <br>
+            <p class="hidden lg:inline-block w-1/3 font-sans text-sm">Left and right arrow keys switch content type</p>
         </div>
-        <div class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
-            {% include 'partials/project-links.njk' %}            
-        </div>
-        <script src="{{ site.baseURL }}/js/content-prefs.js?v={% version %}"></script>
-    {% endblock %}
+    </div>
+    <div class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
+        {% include 'partials/project-links.njk' %}            
+    </div>
+    <script src="{{ site.baseURL }}/js/content-prefs.js?v={% version %}"></script>
+{% endblock %}
