@@ -23,6 +23,7 @@
     "tailwindcss": "^2.0.2"
   },
   "dependencies": {
+    "markdown-it": "^10.0.0",
     "tinygesture": "^1.1.4"
   }
 }
