@@ -52,7 +52,9 @@
         </header>
 
         {% block projectContent %}
-            {{ content | safe }}
+            <main class="post-content">
+                {{ content | safe }}
+            </main>
         {% endblock %}
         
     </main>
