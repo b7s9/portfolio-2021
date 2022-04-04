@@ -38,7 +38,6 @@ applySystemTheme()
 document.addEventListener('DOMContentLoaded', () => {
   const darkToggles = document.getElementsByClassName('dark-toggle')
   const lightToggles = document.getElementsByClassName('light-toggle')
-  const systemToggles = document.getElementsByClassName('system-toggle')
 
   for (toggle of darkToggles) {
     toggle.addEventListener('click', (e) => {
@@ -56,14 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     updateIndicatorActive(initTheme)
   }
-  for (toggle of systemToggles) {
-    toggle.addEventListener('click', (e) => {
-      localStorage.removeItem(colorSchemeName)
-      applySystemTheme()
-      updateIndicatorActive('system')
-    })
-    updateIndicatorActive(initTheme)
-  }
 
   function updateIndicatorActive(name) {
     for (toggle of darkToggles) {
@@ -71,9 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     for (toggle of lightToggles) {
       name === 'light' ? toggle.classList.add('indicator-active') : toggle.classList.remove('indicator-active')
-    }
-    for (toggle of systemToggles) {
-      name === 'system' ? toggle.classList.add('indicator-active') : toggle.classList.remove('indicator-active')
     }
   }
 })
