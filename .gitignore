@@ -6,3 +6,4 @@ package-lock.json
 assets/project-galleries
 fonts/
 assets/images/about
+analytics.njk
