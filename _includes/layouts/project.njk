@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}     
-    <main class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
+    <div class="col-start-1 col-span-6 lg:col-start-5 lg:col-span-6">
         <header class="lg:mt-12">
             <h1 class="text-4xl title-primary">{{ title }}</h1>
             <p class="project-tags mt-2">
@@ -43,10 +43,9 @@
                     {% endfor %}
                 </span>
                 {% if link %}
-                    <span class="block mb-1">
-                        <strong>Link:</strong>
-                        <a href="{{ link }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 dark:text-primary-light underline hover:no-underline">{{ link }}</a>
-                    </span>
+                <div>
+                    <a href="{{ link }}" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-800 text-white opacity-100 hover:bg-primary-900 py-2 px-4 rounded">Try it out!</a>
+                </div>
                 {% endif %}
             </p>
         </header>
@@ -57,7 +56,7 @@
             </main>
         {% endblock %}
         
-    </main>
+    </div>
 
     {%- if collections.project %}
         {%- set nextPost = collections.project | getNextCollectionItem(page) %}
@@ -68,12 +67,12 @@
 
     <div class="col-start-1 col-span-6 lg:col-start-2 lg:col-span-2">
         <div class="flex justify-center align-middle space-x-12 mt-8 lg:mt-0 pb-4 lg:fixed lg:inline-block lg:space-x-0 lg:top-1/3 lg:space-y-8 text-gray-800 dark:text-gray-300">
-            <a href="{{ site.baseURL }}{{ previousPost.url }}" class="group inline-block w-1/2 cursor-pointer border-l-2 border-primary-500 pl-2">
+            <a href="{{ site.baseURL }}{{ previousPost.url }}" class="group inline-block cursor-pointer border-l-2 border-primary-500 pl-2">
                 <p class="group-hover:text-primary-500">{{ previousPost.data.title }}</p>
                 <p class="font-sans text-sm group-hover:text-primary-500">Previous</p>
             </a>
             <br>
-            <a href="{{ site.baseURL }}{{ nextPost.url }}" class="group inline-block w-1/2 cursor-pointer border-l-2 border-primary-500 pl-2">
+            <a href="{{ site.baseURL }}{{ nextPost.url }}" class="group inline-block cursor-pointer border-l-2 border-primary-500 pl-2">
                 <p class="text-left group-hover:text-primary-500">{{ nextPost.data.title }}</p>
                 <p class="font-sans text-left text-sm group-hover:text-primary-500">Next</p>                    
             </a>

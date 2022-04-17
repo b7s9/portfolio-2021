@@ -83,6 +83,20 @@
         @apply font-serif text-gray-800 dark:text-gray-50 dark:text-opacity-90;
     }
 
+    p,
+    blockquote,
+    figcaption,
+    figure,
+    ul,
+    ol,
+    li,
+    div.p {
+        font-size: 1.18rem;
+        line-height: 1.4;
+        @apply font-serif dark:leading-relaxed dark:text-opacity-75;
+        margin-bottom: 1.25rem;
+    }
+
     h1 {
         font-size: 3rem;
         font-weight: 800;
@@ -107,14 +121,6 @@
     h5 {
         font-size: 1.25rem;
         font-weight: 800;
-    }
-
-    p,
-    div.p {
-        font-size: 1.05rem;
-        line-height: 1.4;
-        @apply font-serif dark:leading-relaxed;
-        margin-bottom: 1.25rem;
     }
 
     ul,
