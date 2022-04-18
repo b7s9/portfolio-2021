@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem(colorSchemeName, 'dark')
       document.documentElement.classList.add('dark')
       updateIndicatorActive('dark')
+      window.fathom.trackGoal('8KXFILDM', 0);
     })
     updateIndicatorActive(initTheme)
   }
