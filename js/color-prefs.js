@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem(colorSchemeName, 'dark')
       document.documentElement.classList.add('dark')
       updateIndicatorActive('dark')
-      window.fathom.trackGoal('8KXFILDM', 0);
     })
     updateIndicatorActive(initTheme)
   }
@@ -53,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem(colorSchemeName, 'light')
       document.documentElement.classList.remove('dark')
       updateIndicatorActive('light')
-      window.fathom.trackGoal('1PVLQXQL', 0);
     })
     updateIndicatorActive(initTheme)
   }

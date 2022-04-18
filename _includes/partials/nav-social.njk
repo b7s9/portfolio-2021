@@ -9,13 +9,7 @@
         {% if page.url == item.url %}
             {% set currentAttribute = ' aria-current="page"' %}
         {% endif %}
-
-        {% set analyticsEvent = '' %}
-
-        {% if item.eventCode %}
-            {% set analyticsEvent = 'onclick="fathom.trackGoal(\'' + item.eventCode + '\', 0);"' %}
-        {% endif %}
-        <a class="block md:inline-block py-2 rounded nav-item-color" href="{{ item.url }}" {{analyticsEvent | safe}} {{ externalAttribute | safe }} {{ currentAttribute | safe }} tabindex="1">
+        <a class="block md:inline-block py-2 rounded nav-item-color" href="{{ item.url }}" {{ externalAttribute | safe }} {{ currentAttribute | safe }} tabindex="1">
             <i class="text-md mr-2 {{ item.icon }} fa-fw"></i>
             <span>{{ item.text }}</span>
         </a>
