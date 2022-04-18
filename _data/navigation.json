@@ -16,15 +16,13 @@
       "text": "Github",
       "url": "https://github.com/b7s9",
       "icon": "fab fa-github",
-      "external": true,
-      "eventCode": "BV2MCI2N"
+      "external": true
     },
     {
       "text": "Linkedin",
       "url": "https://www.linkedin.com/in/ben-schenerman/",
       "icon": "fab fa-linkedin",
-      "external": true,
-      "eventCode": "9ODXHYFM"
+      "external": true
     },
     {
       "text": "Email",

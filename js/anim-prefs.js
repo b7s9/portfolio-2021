@@ -7,7 +7,6 @@ for (toggle of animToggles) {
     if (motionAllowed) {
       motionAllowed = false
       pauseAnimations()
-      window.fathom.trackGoal('UJYGZ1Q5', 0);
     } else {
       motionAllowed = true
       startAnimations()

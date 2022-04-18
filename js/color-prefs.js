@@ -38,13 +38,13 @@ applySystemTheme()
 document.addEventListener('DOMContentLoaded', () => {
   const darkToggles = document.getElementsByClassName('dark-toggle')
   const lightToggles = document.getElementsByClassName('light-toggle')
+  const systemToggles = document.getElementsByClassName('system-toggle')
 
   for (toggle of darkToggles) {
     toggle.addEventListener('click', (e) => {
       localStorage.setItem(colorSchemeName, 'dark')
       document.documentElement.classList.add('dark')
       updateIndicatorActive('dark')
-      window.fathom.trackGoal('8KXFILDM', 0);
     })
     updateIndicatorActive(initTheme)
   }
@@ -53,7 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem(colorSchemeName, 'light')
       document.documentElement.classList.remove('dark')
       updateIndicatorActive('light')
-      window.fathom.trackGoal('1PVLQXQL', 0);
+    })
+    updateIndicatorActive(initTheme)
+  }
+  for (toggle of systemToggles) {
+    toggle.addEventListener('click', (e) => {
+      localStorage.removeItem(colorSchemeName)
+      applySystemTheme()
+      updateIndicatorActive('system')
     })
     updateIndicatorActive(initTheme)
   }
@@ -64,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     for (toggle of lightToggles) {
       name === 'light' ? toggle.classList.add('indicator-active') : toggle.classList.remove('indicator-active')
+    }
+    for (toggle of systemToggles) {
+      name === 'system' ? toggle.classList.add('indicator-active') : toggle.classList.remove('indicator-active')
     }
   }
 })
