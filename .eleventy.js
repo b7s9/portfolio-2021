@@ -23,6 +23,12 @@ module.exports = function (eleventyConfig) {
     return String(Date.now())
   })
 
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    // Optional, default is "---"
+    // excerpt_separator: "<!-- excerpt -->"
+  });
+
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {
@@ -37,6 +43,7 @@ module.exports = function (eleventyConfig) {
   })
 
   return {
+    markdownTemplateEngine: "njk",
     dir: {
       input: '.',
       output: '_site',

@@ -14,5 +14,7 @@ module.exports = function () {
     site.baseURL = 'http://localhost:8080'
   }
 
+  site.projectImgURL = site.baseURL + '/assets/project-galleries'
+
   return site
 }
