@@ -20,8 +20,10 @@
         <meta name="twitter:card" content="summary"/>
         <meta name="twitter:title" content="{{ site.title }}"/>
         {# <meta name="twitter:url" content="{{ site.baseURL }}"/> #}
-        <meta name="twitter:image" content="{{ site.baseURL }}/assets/images/about/business-ben.jpg"/>
-        
+        <meta name="twitter:image" content="{{ site.baseURL }}/assets/images/about/business-ben.jpg"/>        
+
+        {% include 'partials/analytics.njk' %}
+
         {% block metatags %}{% endblock %}   
 
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
