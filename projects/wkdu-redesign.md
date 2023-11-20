@@ -23,7 +23,7 @@ images:
 <p>The current iteration of <a href="https://wkdu.org" target="_blank" rel="noopener noreferrer">wkdu.org</a> was built in the mid 2000’s and now runs on unsupported versions of Drupal and PHP. On top of this, the user experience is a royal pain for both public and internal usage. It is also riddled with hacks and bugs, and aesthetically looks a little bit <em>too</em> “college radio”.</p>
 
 <h2>Solution</h2>
-<p>While I was station manager, Peter Liu (WKDU web admin) had expressed to me an interest in tackling the project, but only felt equipped to handle the data and coding side of the project. With my ability to lead the research and design aspects, in winter of 2020, Peter, Natalie Clark (Personnel director), and I finally dug into rebuilding this monolithic site.</p>
+<p>While I was station manager, Peter Liu (WKDU web admin) had expressed to me an interest in tackling the project, but only felt equipped to handle the data and coding side of the project. With my ability to lead the research and design aspects, in winter of 2020, Peter, Natalie (Personnel director), and I finally dug into rebuilding this monolithic site.</p>
 
 ![Results from a navigation card sorting session]({{site.projectImgURL}}/wkdu-redesign/laptop/card-sort-sample@2x.png)
 
